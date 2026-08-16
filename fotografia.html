@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fotografía — Agustín Labajian</title>
+  <meta name="description" content="Galería completa de fotografía por Agustín Labajian.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      min-height: 100vh;
+      background-color: var(--bg-color);
+      color: var(--text-primary);
+      overflow-x: hidden;
+    }
+
+    .all-photos-backdrop {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(245, 245, 247, 0.72);
+      backdrop-filter: blur(22px) saturate(180%);
+      -webkit-backdrop-filter: blur(22px) saturate(180%);
+      z-index: 1;
+      cursor: pointer;
+    }
+
+    body.dark-mode .all-photos-backdrop {
+      background: rgba(10, 10, 12, 0.72);
+    }
+
+    .all-photos-container {
+      position: relative;
+      width: 100%;
+      max-width: 1720px;
+      margin: 0 auto;
+      padding: 140px 3.5vw 100px 3.5vw;
+      box-sizing: border-box;
+      z-index: 2;
+    }
+
+    .photo-grid-full {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      width: 100%;
+      margin-top: 24px;
+    }
+
+    @media (max-width: 960px) {
+      .photo-grid-full {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+      }
+      .all-photos-container {
+        padding: 110px 3.5vw 80px 3.5vw;
+      }
+    }
+
+    @media (max-width: 580px) {
+      .photo-grid-full {
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+      .all-photos-container {
+        padding: 85px 4vw 60px 4vw;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- CURSOR CARTESIANO DE ALTA PRECISIÓN -->
+  <div class="custom-cursor-container" id="custom-cursor">
+    <div class="cursor-axis cursor-axis-h" id="cursor-axis-h"></div>
+    <div class="cursor-axis cursor-axis-v" id="cursor-axis-v"></div>
+    <div class="cursor-center-dot" id="cursor-dot">
+      <span class="cursor-pill-text" id="cursor-pill-text">Ver Foto</span>
+    </div>
+  </div>
+
+  <!-- FONDO CON DESENFOQUE Y RETORNO FLUIDO AL HACER CLIC A LOS COSTADOS -->
+  <div class="all-photos-backdrop" onclick="goBackToHome()"></div>
+
+  <!-- CONTENEDOR PRINCIPAL -->
+  <main class="all-photos-container">
+    <header class="section-header-row apm-header">
+      <h2 class="section-title apm-title">
+        <span class="apm-title-text" id="foto-title">Fotografía</span>
+        <span class="section-count apm-count" id="foto-count">(62)</span>
+      </h2>
+    </header>
+
+    <section class="photo-grid-full">
+      <div class="photo-card" id="foto-1" onclick="openPhotoModal('assets/fotografia/20210828_205213.webp')">
+        <img class="photo-img" src="assets/fotografia/20210828_205213.webp" alt="Fotografía 1" loading="lazy">
+      </div>
+      <div class="photo-card" id="foto-2" onclick="openPhotoModal('assets/fotografia/20210831_130348.webp')">
+        <img class="photo-img" src="assets/fotografia/20210831_130348.webp" alt="Fotografía 2" loading="lazy">
+      </div>
+      <div class="photo-card" id="foto-3" onclick="openPhotoModal('assets/fotografia/20210902_203333.webp')">
+        <img class="photo-img" src="assets/fotografia/20210902_203333.webp" alt="Fotografía 3" loading="lazy">
+      </div>
+      <div class="photo-card" id="foto-4" onclick="openPhotoModal('assets/fotografia/20210904_122031~2.webp')">
+        <img class="photo-img" src="assets/fotografia/20210904_122031~2.webp" alt="Fotografía 4" loading="lazy">
+      </div>
+      <div class="photo-card" id="foto-5" onclick="openPhotoModal('assets/fotografia/20210906_162740.webp')">
+        <img class="photo-img" src="assets/fotografia/20210906_162740.webp" alt="Fotografía 5" loading="lazy">
+      </div>
+      <div class="photo-card" id="foto-6" onclick="openPhotoModal('assets/fotografia/Catedral.webp')">
+        <img class="photo-img" src="assets/fotografia/Catedral.webp" alt="Fotografía 6" loading="lazy">
+      </div>
+      <div class="photo-card" id="foto-7" onclick="openPhotoModal('assets/fotografia/Estatua de la libertad.webp')">
+        <img class="photo-img" src="assets/fotografia/Estatua de la libertad.webp" alt="Fotografía 7" loading="lazy">
+      </div>
+      <div class="photo-card" id="foto-8" onclick="openPhotoModal('assets/fotografia/Ex banco de Londres.webp')">
+        <img class="photo-img" src="assets/fotografia/Ex banco de Londres.webp" alt="Fotografía 8" loading="lazy">
+      </div>
+      <div class="photo-card" id="foto-9" onclick="openPhotoModal('assets/fotografia/Iglesia.webp')">
+        <img class="photo-img" src="assets/fotografia/Iglesia.webp" alt="Fotografía 9" loading="lazy">
+      </div>
+      <div class="photo-card" id="foto-10" onclick="openPhotoModal('assets/fotografia/IMG_0101~2.webp')">
+        <img class="photo-img" src="assets/fotografia/IMG_0101~2.webp" alt="Fotografía 10" loading="lazy">
+      </div>
+      <div class="photo-card" id="foto-11" onclick="openPhotoModal('assets/fotografia/IMG_0184~2.webp')">
+        <img class="photo-img" src="assets/fotografia/IMG_0184~2.webp" alt="Fotografía 11" loading="lazy">
+      </div>
+      <div class="photo-card" id="foto-12" onclick="openPhotoModal('assets/fotografia/IMG_20180907_164408832_HDR.webp')">
+        <img class="photo-img" src="assets/fotografia/IMG_20180907_164408832_HDR.webp" alt="Fotografía 12" loading="lazy">
+      </div>
+      <div class="photo-card" id="foto-13" onclick="openPhotoModal('assets/fotografia/IMG_20180911_100608391_HDR.webp')">
+        <img class="photo-img" src="assets/fotografia/IMG_20180911_100608391_HDR.webp" alt="Fotografía 13" loading="lazy">
+      </div>
+      <div class="photo-card" id="foto-14" onclick="openPhotoModal('assets/fotografia/IMG_20210904_115609.webp')">
+        <img class="photo-img" src="assets/fotografia/IMG_20210904_115609.webp" alt="Fotografía 14" loading="lazy">
+      </div>
+      <div class="photo-card" id="foto-15" onclick="openPhotoModal('assets/fotografia/IMG_20210904_115656.webp')">
+        <img class="photo-img" src="assets/fotografia/IMG_20210904_115656.webp" alt="Fotografía 15" loading="lazy">
+      </div>
+      <div class="photo-card" id="foto-16" onclick="openPhotoModal('assets/fotografia/IMG_20210904_115738.webp')">
+        <img class="photo-img" src="assets/fotografia/IMG_20210904_115738.webp" alt="Fotografía 16" loading="lazy">
+      </div>
+      <div class="photo-card" id="foto-17" onclick="openPhotoModal('assets/fotografia/IMG_20210905_115958.webp')">
+        <img class="photo-img" src="assets/fotografia/IMG_20210905_115958.webp" alt="Fotografía 17" loading="lazy">
+      </div>
+      <div class="photo-card" id="foto-18" onclick="openPhotoModal('assets/fotografia/IMG_20210905_124206.webp')">
+        <img class="photo-img" src="assets/fotografia/IMG_20210905_124206.webp" alt="Fotografía 18" loading="lazy">
+      </div>
+      <div class="photo-card" id="foto-19" onclick="openPhotoModal('assets/fotografia/IMG_20210905_181342.webp')">
+        <img class="photo-img" src="assets/fotografia/IMG_20210905_181342.webp" alt="Fotografía 19" loading="lazy">
+      </div>
+      <div class="photo-card" id="foto-20" onclick="openPhotoModal('assets/fotografia/IMG_20210905_181443.webp')">
+        <img class="photo-img" src="assets/fotografia/IMG_20210905_181443.webp" alt="Fotografía 20" loading="lazy">
+      </div>
+      <div class="photo-card" id="foto-21" onclick="openPhotoModal('assets/fotografia/IMG_20210905_181538.webp')">
+        <img class="photo-img" src="assets/fotografia/IMG_20210905_181538.webp" alt="Fotografía 21" loading="lazy">
+      </div>
+      <div class="photo-card" id="foto-22" onclick="openPhotoModal('assets/fotografia/IMG-20210830-WA0104~2.webp')">
+        <img class="photo-img" src="assets/fotografia/IMG-20210830-WA0104~2.webp" alt="Fotografía 22" loading="lazy">
+      </div>
+      <div class="photo-card" id="foto-23" onclick="openPhotoModal('assets/fotografia/IMG-20260105-WA0130.webp')">
+        <img class="photo-img" src="assets/fotografia/IMG-20260105-WA0130.webp" alt="Fotografía 23" loading="lazy">
+      </div>
+      <div class="photo-card" id="foto-24" onclick="openPhotoModal('assets/fotografia/IMG-20260106-WA0002.webp')">
+        <img class="photo-img" src="assets/fotografia/IMG-20260106-WA0002.webp" alt="Fotografía 24" loading="lazy">
+      </div>
+      <div class="photo-card" id="foto-25" onclick="openPhotoModal('assets/fotografia/IMG-20260107-WA0129.webp')">
+        <img class="photo-img" src="assets/fotografia/IMG-20260107-WA0129.webp" alt="Fotografía 25" loading="lazy">
+      </div>
+      <div class="photo-card" id="foto-26" onclick="openPhotoModal('assets/fotografia/IMG-20260110-WA0319.webp')">
+        <img class="photo-img" src="assets/fotografia/IMG-20260110-WA0319.webp" alt="Fotografía 26" loading="lazy">
+      </div>
+      <div class="photo-card" id="foto-27" onclick="openPhotoModal('assets/fotografia/IMG-20260114-WA0275.webp')">
+        <img class="photo-img" src="assets/fotografia/IMG-20260114-WA0275.webp" alt="Fotografía 27" loading="lazy">
+      </div>
+      <div class="photo-card" id="foto-28" onclick="openPhotoModal('assets/fotografia/IMG-20260114-WA0321.webp')">
+        <img class="photo-img" src="assets/fotografia/IMG-20260114-WA0321.webp" alt="Fotografía 28" loading="lazy">
+      </div>
+      <div class="photo-card" id="foto-29" onclick="openPhotoModal('assets/fotografia/IMG-20260114-WA0400.webp')">
+        <img class="photo-img" src="assets/fotografia/IMG-20260114-WA0400.webp" alt="Fotografía 29" loading="lazy">
+      </div>
+      <div class="photo-card" id="foto-30" onclick="openPhotoModal('assets/fotografia/IMG-20260114-WA0414.webp')">
+        <img class="photo-img" src="assets/fotografia/IMG-20260114-WA0414.webp" alt="Fotografía 30" loading="lazy">
+      </div>
+      <div class="photo-card" id="foto-31" onclick="openPhotoModal('assets/fotografia/IMG-20260115-WA0106.webp')">
+        <img class="photo-img" src="assets/fotografia/IMG-20260115-WA0106.webp" alt="Fotografía 31" loading="lazy">
+      </div>
+      <div class="photo-card" id="foto-32" onclick="openPhotoModal('assets/fotografia/IMG-20260115-WA0287.webp')">
+        <img class="photo-img" src="assets/fotografia/IMG-20260115-WA0287.webp" alt="Fotografía 32" loading="lazy">
+      </div>
+      <div class="photo-card" id="foto-33" onclick="openPhotoModal('assets/fotografia/motion_photo_4574619339018186189.webp')">
+        <img class="photo-img" src="assets/fotografia/motion_photo_4574619339018186189.webp" alt="Fotografía 33" loading="lazy">
+      </div>
+      <div class="photo-card" id="foto-34" onclick="openPhotoModal('assets/fotografia/Palacio agua.webp')">
+        <img class="photo-img" src="assets/fotografia/Palacio agua.webp" alt="Fotografía 34" loading="lazy">
+      </div>
+      <div class="photo-card" id="foto-35" onclick="openPhotoModal('assets/fotografia/PXL_20210908_142741852.webp')">
+        <img class="photo-img" src="assets/fotografia/PXL_20210908_142741852.webp" alt="Fotografía 35" loading="lazy">
+      </div>
+      <div class="photo-card" id="foto-36" onclick="openPhotoModal('assets/fotografia/PXL_20220414_141137684.MP.webp')">
+        <img class="photo-img" src="assets/fotografia/PXL_20220414_141137684.MP.webp" alt="Fotografía 36" loading="lazy">
+      </div>
+      <div class="photo-card" id="foto-37" onclick="openPhotoModal('assets/fotografia/PXL_20220415_140716228.MP~2.webp')">
+        <img class="photo-img" src="assets/fotografia/PXL_20220415_140716228.MP~2.webp" alt="Fotografía 37" loading="lazy">
+      </div>
+      <div class="photo-card" id="foto-38" onclick="openPhotoModal('assets/fotografia/PXL_20220415_205455379~2.webp')">
+        <img class="photo-img" src="assets/fotografia/PXL_20220415_205455379~2.webp" alt="Fotografía 38" loading="lazy">
+      </div>
+      <div class="photo-card" id="foto-39" onclick="openPhotoModal('assets/fotografia/PXL_20221001_195212139.MP.webp')">
+        <img class="photo-img" src="assets/fotografia/PXL_20221001_195212139.MP.webp" alt="Fotografía 39" loading="lazy">
+      </div>
+      <div class="photo-card" id="foto-40" onclick="openPhotoModal('assets/fotografia/PXL_20221002_213448323.MP.webp')">
+        <img class="photo-img" src="assets/fotografia/PXL_20221002_213448323.MP.webp" alt="Fotografía 40" loading="lazy">
+      </div>
+      <div class="photo-card" id="foto-41" onclick="openPhotoModal('assets/fotografia/PXL_20230323_162826117.MP.webp')">
+        <img class="photo-img" src="assets/fotografia/PXL_20230323_162826117.MP.webp" alt="Fotografía 41" loading="lazy">
+      </div>
+      <div class="photo-card" id="foto-42" onclick="openPhotoModal('assets/fotografia/PXL_20230409_022232826.MP-01.webp')">
+        <img class="photo-img" src="assets/fotografia/PXL_20230409_022232826.MP-01.webp" alt="Fotografía 42" loading="lazy">
+      </div>
+      <div class="photo-card" id="foto-43" onclick="openPhotoModal('assets/fotografia/PXL_20230421_191503570.MP.webp')">
+        <img class="photo-img" src="assets/fotografia/PXL_20230421_191503570.MP.webp" alt="Fotografía 43" loading="lazy">
+      </div>
+      <div class="photo-card" id="foto-44" onclick="openPhotoModal('assets/fotografia/PXL_20230429_152005671.MP.webp')">
+        <img class="photo-img" src="assets/fotografia/PXL_20230429_152005671.MP.webp" alt="Fotografía 44" loading="lazy">
+      </div>
+      <div class="photo-card" id="foto-45" onclick="openPhotoModal('assets/fotografia/PXL_20230731_190214495.MP.webp')">
+        <img class="photo-img" src="assets/fotografia/PXL_20230731_190214495.MP.webp" alt="Fotografía 45" loading="lazy">
+      </div>
+      <div class="photo-card" id="foto-46" onclick="openPhotoModal('assets/fotografia/PXL_20230731_212502425.MP.webp')">
+        <img class="photo-img" src="assets/fotografia/PXL_20230731_212502425.MP.webp" alt="Fotografía 46" loading="lazy">
+      </div>
+      <div class="photo-card" id="foto-47" onclick="openPhotoModal('assets/fotografia/PXL_20230731_212720773.MP.webp')">
+        <img class="photo-img" src="assets/fotografia/PXL_20230731_212720773.MP.webp" alt="Fotografía 47" loading="lazy">
+      </div>
+      <div class="photo-card" id="foto-48" onclick="openPhotoModal('assets/fotografia/PXL_20230731_213144573.MP.webp')">
+        <img class="photo-img" src="assets/fotografia/PXL_20230731_213144573.MP.webp" alt="Fotografía 48" loading="lazy">
+      </div>
+      <div class="photo-card" id="foto-49" onclick="openPhotoModal('assets/fotografia/PXL_20231006_171923194.MP.webp')">
+        <img class="photo-img" src="assets/fotografia/PXL_20231006_171923194.MP.webp" alt="Fotografía 49" loading="lazy">
+      </div>
+      <div class="photo-card" id="foto-50" onclick="openPhotoModal('assets/fotografia/PXL_20231006_173247157.MP.webp')">
+        <img class="photo-img" src="assets/fotografia/PXL_20231006_173247157.MP.webp" alt="Fotografía 50" loading="lazy">
+      </div>
+      <div class="photo-card" id="foto-51" onclick="openPhotoModal('assets/fotografia/PXL_20231006_204234461.MP.webp')">
+        <img class="photo-img" src="assets/fotografia/PXL_20231006_204234461.MP.webp" alt="Fotografía 51" loading="lazy">
+      </div>
+      <div class="photo-card" id="foto-52" onclick="openPhotoModal('assets/fotografia/PXL_20240112_223720302.MP~2.webp')">
+        <img class="photo-img" src="assets/fotografia/PXL_20240112_223720302.MP~2.webp" alt="Fotografía 52" loading="lazy">
+      </div>
+      <div class="photo-card" id="foto-53" onclick="openPhotoModal('assets/fotografia/PXL_20240329_191708839.MP~2.webp')">
+        <img class="photo-img" src="assets/fotografia/PXL_20240329_191708839.MP~2.webp" alt="Fotografía 53" loading="lazy">
+      </div>
+      <div class="photo-card" id="foto-54" onclick="openPhotoModal('assets/fotografia/PXL_20240401_182547656.MP.webp')">
+        <img class="photo-img" src="assets/fotografia/PXL_20240401_182547656.MP.webp" alt="Fotografía 54" loading="lazy">
+      </div>
+      <div class="photo-card" id="foto-55" onclick="openPhotoModal('assets/fotografia/PXL_20240401_211450454.MP~4.webp')">
+        <img class="photo-img" src="assets/fotografia/PXL_20240401_211450454.MP~4.webp" alt="Fotografía 55" loading="lazy">
+      </div>
+      <div class="photo-card" id="foto-56" onclick="openPhotoModal('assets/fotografia/PXL_20240423_205916721.webp')">
+        <img class="photo-img" src="assets/fotografia/PXL_20240423_205916721.webp" alt="Fotografía 56" loading="lazy">
+      </div>
+      <div class="photo-card" id="foto-57" onclick="openPhotoModal('assets/fotografia/PXL_20240423_230142697.MP.webp')">
+        <img class="photo-img" src="assets/fotografia/PXL_20240423_230142697.MP.webp" alt="Fotografía 57" loading="lazy">
+      </div>
+      <div class="photo-card" id="foto-58" onclick="openPhotoModal('assets/fotografia/PXL_20240506_140349300.MP.webp')">
+        <img class="photo-img" src="assets/fotografia/PXL_20240506_140349300.MP.webp" alt="Fotografía 58" loading="lazy">
+      </div>
+      <div class="photo-card" id="foto-59" onclick="openPhotoModal('assets/fotografia/PXL_20240506_140833411.MP.webp')">
+        <img class="photo-img" src="assets/fotografia/PXL_20240506_140833411.MP.webp" alt="Fotografía 59" loading="lazy">
+      </div>
+      <div class="photo-card" id="foto-60" onclick="openPhotoModal('assets/fotografia/PXL_20250530_210227627.MP~2.webp')">
+        <img class="photo-img" src="assets/fotografia/PXL_20250530_210227627.MP~2.webp" alt="Fotografía 60" loading="lazy">
+      </div>
+      <div class="photo-card" id="foto-61" onclick="openPhotoModal('assets/fotografia/PXL_20260531_200422977.MP.webp')">
+        <img class="photo-img" src="assets/fotografia/PXL_20260531_200422977.MP.webp" alt="Fotografía 61" loading="lazy">
+      </div>
+      <div class="photo-card" id="foto-62" onclick="openPhotoModal('assets/fotografia/S7300248.webp')">
+        <img class="photo-img" src="assets/fotografia/S7300248.webp" alt="Fotografía 62" loading="lazy">
+      </div>
+    </section>
+  </main>
+
+  <!-- PANTALLA COMPLETA / MODAL DE FOTOGRAFÍA (LIGHTBOX) -->
+  <div id="photo-modal" class="photo-modal" onclick="closePhotoModal()">
+    <div class="photo-modal-backdrop"></div>
+    <div class="photo-modal-content">
+      <img id="photo-modal-img" class="photo-modal-img" src="" alt="Fotografía en grande">
+    </div>
+  </div>
+
+  <script>
+    // Recuperar tema
+    try {
+      const savedTheme = localStorage.getItem('portfolio-theme');
+      if (savedTheme === 'dark') {
+        document.body.classList.add('dark-mode');
+      }
+    } catch(e) {}
+
+    // Idioma
+    let currentLang = 'ES';
+    try {
+      const savedLang = localStorage.getItem('portfolio-lang');
+      if (savedLang === 'EN') {
+        currentLang = 'EN';
+        document.getElementById('foto-title').textContent = 'Photography';
+      }
+    } catch(e) {}
+
+    function goBackToHome() {
+      sessionStorage.setItem('skipIntroFromPhoto', 'true');
+      window.location.href = 'index.html#sec-fotografia';
+    }
+
+    // Modal / Lightbox de fotografía
+    let currentActivePhoto = null;
+    function openPhotoModal(src) {
+      const modal = document.getElementById('photo-modal');
+      const img = document.getElementById('photo-modal-img');
+      if (modal && img) {
+        img.src = src;
+        currentActivePhoto = src;
+        modal.classList.add('is-active');
+        document.body.style.overflow = 'hidden';
+      }
+    }
+
+    function closePhotoModal() {
+      const modal = document.getElementById('photo-modal');
+      if (modal) {
+        modal.classList.remove('is-active');
+        currentActivePhoto = null;
+        document.body.style.overflow = '';
+      }
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        if (currentActivePhoto) {
+          closePhotoModal();
+        } else {
+          goBackToHome();
+        }
+      }
+    });
+
+    // Cursor cartesiano y hover
+    const cursorContainer = document.getElementById('custom-cursor');
+    const cursorAxisH = document.getElementById('cursor-axis-h');
+    const cursorAxisV = document.getElementById('cursor-axis-v');
+    const cursorDot = document.getElementById('cursor-dot');
+    const cursorPillText = document.getElementById('cursor-pill-text');
+
+    window.addEventListener('mousemove', (e) => {
+      const mouseX = e.clientX;
+      const mouseY = e.clientY;
+
+      if (cursorContainer) {
+        cursorContainer.classList.add('is-active');
+      }
+      if (cursorAxisH) {
+        cursorAxisH.style.transform = `translateY(${mouseY}px)`;
+      }
+      if (cursorAxisV) {
+        cursorAxisV.style.transform = `translateX(${mouseX}px)`;
+      }
+      if (cursorDot) {
+        cursorDot.style.left = `${mouseX}px`;
+        cursorDot.style.top = `${mouseY}px`;
+      }
+    });
+
+    const photoCards = document.querySelectorAll('.photo-card');
+    photoCards.forEach(photo => {
+      photo.addEventListener('mouseenter', () => {
+        if (cursorDot) {
+          cursorDot.classList.add('is-card-hover');
+          if (cursorPillText) {
+            cursorPillText.textContent = currentLang === 'ES' ? 'Ver Foto' : 'View Photo';
+          }
+        }
+      });
+      photo.addEventListener('mouseleave', () => {
+        if (cursorDot) {
+          cursorDot.classList.remove('is-card-hover');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

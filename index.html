@@ -1,0 +1,1453 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agustín Labajian — Portfolio</title>
+  <meta name="description" content="Portfolio profesional y académico de Agustín Labajian - Estudiante avanzado de Arquitectura (FADU-UBA) y Modelador BIM.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=3.3">
+  <style>
+    /* TRATAMIENTO 2 PÍLDORAS EN TRABAJO PROFESIONAL Y PROYECTOS ACADÉMICOS */
+    #sec-trabajo-profesional .card-overlay-info,
+    #sec-proyectos-academicos .card-overlay-info {
+      top: 50% !important;
+      left: 50% !important;
+      bottom: auto !important;
+      right: auto !important;
+      transform: translate(-50%, -50%) !important;
+      text-align: center !important;
+      width: auto !important;
+      max-width: 92% !important;
+      background: transparent !important;
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      border: none !important;
+      box-shadow: none !important;
+      padding: 0 !important;
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      justify-content: center !important;
+      gap: 12px !important;
+    }
+
+    #sec-trabajo-profesional .card-title,
+    #sec-proyectos-academicos .card-title {
+      display: inline-block !important;
+      background: rgba(18, 18, 22, 0.52) !important;
+      backdrop-filter: blur(18px) saturate(180%) !important;
+      -webkit-backdrop-filter: blur(18px) saturate(180%) !important;
+      border: 1px solid rgba(255, 255, 255, 0.22) !important;
+      border-radius: 9999px !important;
+      box-shadow: 0 14px 36px rgba(0, 0, 0, 0.3) !important;
+      padding: 16px 42px !important;
+      font-family: 'Bahnschrift', 'DIN Alternate', 'Franklin Gothic Medium', sans-serif !important;
+      font-size: clamp(1.25rem, 2.6vw, 2.9rem) !important;
+      font-weight: 700 !important;
+      letter-spacing: 0.04em !important;
+      line-height: 1.15 !important;
+      color: #ffffff !important;
+      text-transform: uppercase !important;
+      text-shadow: none !important;
+      white-space: nowrap !important;
+      margin: 0 !important;
+      max-width: 100% !important;
+    }
+
+    #sec-trabajo-profesional .card-category,
+    #sec-proyectos-academicos .card-category {
+      display: inline-block !important;
+      border-radius: 9999px !important;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.22) !important;
+      padding: 8px 24px !important;
+      font-size: clamp(0.82rem, 1vw, 1.05rem) !important;
+      font-weight: 600 !important;
+      letter-spacing: 0.04em !important;
+      text-transform: none !important;
+      text-shadow: none !important;
+      white-space: nowrap !important;
+      margin: 0 !important;
+    }
+
+    /* COLORES SUBTÍTULOS PROFESIONALES */
+    #prof-hiba .card-category {
+      background: rgba(174, 104, 84, 0.62) !important;
+      backdrop-filter: blur(18px) saturate(180%) !important;
+      -webkit-backdrop-filter: blur(18px) saturate(180%) !important;
+      border: 1px solid rgba(255, 255, 255, 0.32) !important;
+      color: #ffffff !important;
+    }
+
+    #prof-issf .card-category {
+      background: rgba(92, 105, 124, 0.62) !important;
+      backdrop-filter: blur(18px) saturate(180%) !important;
+      -webkit-backdrop-filter: blur(18px) saturate(180%) !important;
+      border: 1px solid rgba(255, 255, 255, 0.32) !important;
+      color: #ffffff !important;
+    }
+
+    #prof-odeon .card-category {
+      background: rgba(222, 158, 48, 0.62) !important;
+      backdrop-filter: blur(18px) saturate(180%) !important;
+      -webkit-backdrop-filter: blur(18px) saturate(180%) !important;
+      border: 1px solid rgba(255, 255, 255, 0.32) !important;
+      color: #ffffff !important;
+    }
+
+    /* COLORES SUBTÍTULOS ACADÉMICOS */
+    #acad-3 .card-category { /* Centro Cultural Lobos */
+      background: rgba(192, 80, 72, 0.62) !important;
+      backdrop-filter: blur(18px) saturate(180%) !important;
+      -webkit-backdrop-filter: blur(18px) saturate(180%) !important;
+      border: 1px solid rgba(255, 255, 255, 0.32) !important;
+      color: #ffffff !important;
+    }
+
+    #acad-5 .card-category { /* Restaurante */
+      background: rgba(198, 166, 115, 0.62) !important;
+      backdrop-filter: blur(18px) saturate(180%) !important;
+      -webkit-backdrop-filter: blur(18px) saturate(180%) !important;
+      border: 1px solid rgba(255, 255, 255, 0.32) !important;
+      color: #ffffff !important;
+    }
+
+    #acad-4 .card-category { /* Plaza bajo Viaducto */
+      background: rgba(130, 84, 131, 0.62) !important;
+      backdrop-filter: blur(18px) saturate(180%) !important;
+      -webkit-backdrop-filter: blur(18px) saturate(180%) !important;
+      border: 1px solid rgba(255, 255, 255, 0.32) !important;
+      color: #ffffff !important;
+    }
+
+    body.dark-mode #sec-trabajo-profesional .card-title,
+    body.dark-mode #sec-proyectos-academicos .card-title {
+      background: rgba(240, 240, 245, 0.48) !important;
+      border: 1px solid rgba(255, 255, 255, 0.35) !important;
+      color: #111111 !important;
+    }
+
+    #sec-trabajo-profesional .card-img-wrapper::before,
+    #sec-proyectos-academicos .card-img-wrapper::before {
+      display: none !important;
+    }
+
+    /* PÍLDORAS DEL FOOTER (ZÓCALO FINAL) CON LIQUID GLASS Y BARRIDO TIPOGRÁFICO */
+    .footer-pill-btn {
+      background: rgba(18, 18, 22, 0.52) !important;
+      backdrop-filter: blur(14px) saturate(180%) !important;
+      -webkit-backdrop-filter: blur(14px) saturate(180%) !important;
+      border: 1px solid rgba(255, 255, 255, 0.22) !important;
+      color: #ffffff !important;
+      padding: 9px 20px !important;
+      border-radius: 9999px !important;
+      font-size: 0.84rem !important;
+      font-weight: 600 !important;
+      text-decoration: none !important;
+      transition: border-color 0.25s ease, box-shadow 0.25s ease !important;
+      overflow: hidden !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      cursor: none !important;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15) !important;
+    }
+
+    body.dark-mode .footer-pill-btn {
+      background: rgba(240, 240, 245, 0.48) !important;
+      border: 1px solid rgba(255, 255, 255, 0.35) !important;
+      color: #111111 !important;
+    }
+
+    .footer-pill-btn:hover {
+      border-color: rgba(255, 255, 255, 0.55) !important;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25) !important;
+      transform: none !important;
+    }
+
+    .footer-pill-btn .btn-sweep-wrapper {
+      display: inline-flex !important;
+      flex-direction: column !important;
+      height: 1.25em !important;
+      overflow: hidden !important;
+      vertical-align: middle !important;
+    }
+
+    .footer-pill-btn .btn-sweep-text {
+      display: block !important;
+      line-height: 1.25em !important;
+      transition: transform 0.38s cubic-bezier(0.16, 1, 0.3, 1) !important;
+      will-change: transform !important;
+    }
+
+    .footer-pill-btn:hover .btn-sweep-text {
+      transform: translateY(-100%) !important;
+    }
+
+    .social-icon-btn {
+      width: 42px !important;
+      height: 42px !important;
+      border-radius: 50% !important;
+      background: rgba(18, 18, 22, 0.52) !important;
+      backdrop-filter: blur(14px) saturate(180%) !important;
+      -webkit-backdrop-filter: blur(14px) saturate(180%) !important;
+      border: 1px solid rgba(255, 255, 255, 0.22) !important;
+      color: #ffffff !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      text-decoration: none !important;
+      transition: border-color 0.25s ease, box-shadow 0.25s ease !important;
+      cursor: none !important;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15) !important;
+      overflow: hidden !important;
+    }
+
+    .icon-sweep-wrapper {
+      display: inline-flex !important;
+      flex-direction: column !important;
+      height: 16px !important;
+      overflow: hidden !important;
+      align-items: center !important;
+      justify-content: flex-start !important;
+    }
+
+    .icon-sweep-item {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      height: 16px !important;
+      line-height: 1 !important;
+      transition: transform 0.38s cubic-bezier(0.16, 1, 0.3, 1) !important;
+      will-change: transform !important;
+    }
+
+    .social-icon-btn:hover .icon-sweep-item {
+      transform: translateY(-100%) !important;
+    }
+
+    body.dark-mode .social-icon-btn {
+      background: rgba(240, 240, 245, 0.48) !important;
+      border: 1px solid rgba(255, 255, 255, 0.35) !important;
+      color: #111111 !important;
+    }
+
+    .social-icon-btn:hover {
+      border-color: rgba(255, 255, 255, 0.55) !important;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25) !important;
+      transform: none !important;
+    }
+
+    /* =======================================================
+       COLORES INDIVIDUALES PLENOS EN HOVER PARA CADA PROYECTO
+       (PANTALLA DE TODOS LOS PROYECTOS Y SECCIÓN DE ESCRITOS)
+       ======================================================= */
+    .grid-card-title,
+    .essay-list-title {
+      transition: color 0.25s ease !important;
+    }
+
+    /* 1. HIBA Academy Bay Area (#ae6854) */
+    .grid-card-item[data-id="prof-hiba"]:hover .grid-card-title,
+    #grid-prof-hiba:hover .grid-card-title,
+    .grid-card-item[onclick*="prof-hiba"]:hover .grid-card-title {
+      color: #ae6854 !important;
+    }
+
+    /* 2. International School of San Francisco (#5c697c) */
+    .grid-card-item[data-id="prof-issf"]:hover .grid-card-title,
+    #grid-prof-issf:hover .grid-card-title,
+    .grid-card-item[onclick*="prof-issf"]:hover .grid-card-title {
+      color: #5c697c !important;
+    }
+
+    /* 3. Teatro Odeón (#de9e30) */
+    .grid-card-item[data-id="prof-odeon"]:hover .grid-card-title,
+    #grid-prof-odeon:hover .grid-card-title,
+    .grid-card-item[onclick*="prof-odeon"]:hover .grid-card-title {
+      color: #de9e30 !important;
+    }
+
+    /* 4. Espesores de Coexistencia (#b34754) */
+    .grid-card-item[data-id="acad-1"]:hover .grid-card-title,
+    #grid-acad-1:hover .grid-card-title,
+    .grid-card-item[onclick*="acad-1"]:hover .grid-card-title {
+      color: #b34754 !important;
+    }
+
+    /* 5. Parque Metropolitano Tecnológico (#6e7d5c) */
+    .grid-card-item[data-id="acad-2"]:hover .grid-card-title,
+    #grid-acad-2:hover .grid-card-title,
+    .grid-card-item[onclick*="acad-2"]:hover .grid-card-title {
+      color: #6e7d5c !important;
+    }
+
+    /* 6. Centro Cultural Lobos (#c05048) */
+    .grid-card-item[data-id="acad-3"]:hover .grid-card-title,
+    #grid-acad-3:hover .grid-card-title,
+    .grid-card-item[onclick*="acad-3"]:hover .grid-card-title {
+      color: #c05048 !important;
+    }
+
+    /* 7. Plaza bajo Viaducto (#825483) */
+    .grid-card-item[data-id="acad-4"]:hover .grid-card-title,
+    #grid-acad-4:hover .grid-card-title,
+    .grid-card-item[onclick*="acad-4"]:hover .grid-card-title {
+      color: #825483 !important;
+    }
+
+    /* 8. Restaurante (#c6a673) */
+    .grid-card-item[data-id="acad-5"]:hover .grid-card-title,
+    #grid-acad-5:hover .grid-card-title,
+    .grid-card-item[onclick*="acad-5"]:hover .grid-card-title {
+      color: #c6a673 !important;
+    }
+
+    /* 9. Vivienda Unifamiliar (#b98d72) */
+    .grid-card-item[data-id="acad-6"]:hover .grid-card-title,
+    #grid-acad-6:hover .grid-card-title,
+    .grid-card-item[onclick*="acad-6"]:hover .grid-card-title {
+      color: #b98d72 !important;
+    }
+
+    /* 10. Plaza (#cd8d85) */
+    .grid-card-item[data-id="acad-7"]:hover .grid-card-title,
+    #grid-acad-7:hover .grid-card-title,
+    .grid-card-item[onclick*="acad-7"]:hover .grid-card-title {
+      color: #cd8d85 !important;
+    }
+
+    /* 11. Intersticio (#da9d9a) */
+    .grid-card-item[data-id="esc-1"]:hover .grid-card-title,
+    #grid-esc-1:hover .grid-card-title,
+    .grid-card-item[onclick*="esc-1"]:hover .grid-card-title,
+    #esc-1:hover .essay-list-title {
+      color: #da9d9a !important;
+    }
+
+    /* 12. Interpretación local de un fenómeno global (#be7c6e) */
+    .grid-card-item[data-id="esc-2"]:hover .grid-card-title,
+    #grid-esc-2:hover .grid-card-title,
+    .grid-card-item[onclick*="esc-2"]:hover .grid-card-title,
+    #esc-2:hover .essay-list-title {
+      color: #be7c6e !important;
+    }
+
+    /* 13. Mixtura de usos (#b46d86) */
+    .grid-card-item[data-id="esc-3"]:hover .grid-card-title,
+    #grid-esc-3:hover .grid-card-title,
+    .grid-card-item[onclick*="esc-3"]:hover .grid-card-title,
+    #esc-3:hover .essay-list-title {
+      color: #b46d86 !important;
+    }
+
+    /* 14. La Arquitectura como Propaganda Política (#a80000) */
+    .grid-card-item[data-id="esc-4"]:hover .grid-card-title,
+    #grid-esc-4:hover .grid-card-title,
+    .grid-card-item[onclick*="esc-4"]:hover .grid-card-title,
+    #esc-4:hover .essay-list-title {
+      color: #a80000 !important;
+    }
+
+    /* MINI ICOSAEDRO AL LADO DE LA 'A' EN LA BARRA SUPERIOR */
+    @keyframes icoSpinInPlace {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    .home-brand-ico-symbol {
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      margin-right: 4px !important;
+      width: 26px !important;
+      height: 26px !important;
+      transform-origin: center center !important;
+      flex-shrink: 0 !important;
+      vertical-align: middle !important;
+    }
+
+    .home-brand-ico-symbol svg {
+      display: block !important;
+      width: 26px !important;
+      height: 26px !important;
+      animation: icoSpinInPlace 10s linear infinite !important;
+      transform-origin: 12px 12px !important;
+      will-change: transform !important;
+    }
+
+    .home-brand-btn:hover .home-brand-ico-symbol svg {
+      animation-duration: 3.5s !important;
+    }
+
+    /* MAIL DEL ZÓCALO INFERIOR EN HOVER */
+    .footer-contact-mail {
+      transition: color 0.25s ease !important;
+    }
+
+    .footer-contact-mail:hover {
+      color: #cd8d85 !important;
+    }
+
+    /* =======================================================
+       ESPACIO DE TRANSICIÓN CON FRASE EDITORIAL PINNED
+       (SOLO APARECE TRAS SALIR DE PORTADA EN GRIS CLARO Y SE PINTA DE NEGRO AL LEER)
+       ======================================================= */
+    .home-transition-spacer {
+      height: 250vh;
+      width: 100%;
+      position: relative;
+      background-color: var(--bg-color);
+      box-sizing: border-box;
+      overflow: visible;
+      margin: 0;
+      padding: 0;
+    }
+
+    .transition-quote-sticky {
+      position: sticky;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 6vw;
+      box-sizing: border-box;
+      overflow: hidden;
+      z-index: 10;
+    }
+
+    .transition-quote-container {
+      max-width: 960px !important;
+      width: 100%;
+      margin: 0 auto;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+    }
+
+    .transition-quote-text {
+      font-family: var(--font-main);
+      font-size: clamp(1.3rem, 2.3vw, 2.35rem) !important;
+      font-weight: 500;
+      line-height: 1.4 !important;
+      letter-spacing: -0.025em;
+      text-align: center;
+      margin: 0 auto;
+      opacity: 0;
+      transform: none !important;
+      filter: none !important;
+      user-select: none;
+      will-change: opacity;
+    }
+
+    .transition-quote-author {
+      font-family: var(--font-main);
+      font-size: clamp(0.92rem, 1.2vw, 1.18rem);
+      font-weight: 400;
+      letter-spacing: -0.01em;
+      color: var(--text-secondary);
+      text-align: center;
+      margin: 0 auto;
+      opacity: 0;
+      user-select: none;
+      will-change: opacity;
+      transition: color 0.3s ease;
+    }
+
+    .quote-word {
+      display: inline-block;
+      color: #c4c4c8;
+      transition: color 0.15s ease;
+      will-change: color;
+    }
+
+    /* MAZO DE FICHAS 16:9 EN BLOQUE UNIFICADO */
+    .cards-deck-wrapper {
+      position: relative;
+      width: 100%;
+      height: 285vh;
+      margin-bottom: 90px;
+    }
+
+    .cards-deck-sticky {
+      position: sticky;
+      top: 20px;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      max-height: calc(100vh - 40px);
+      border-radius: 32px;
+      overflow: visible;
+      z-index: 20;
+    }
+
+    .cards-deck-sticky .card-item {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      margin: 0 !important;
+      border-radius: 32px;
+      overflow: hidden;
+      box-shadow: none !important;
+      background-color: var(--bg-color);
+      border: 1px solid var(--border-color);
+      transform-origin: top center;
+      will-change: transform, filter;
+      transition: filter 0.15s ease-out;
+    }
+
+    .cards-deck-sticky .card-item:nth-child(1) { z-index: 10; }
+    .cards-deck-sticky .card-item:nth-child(2) { z-index: 11; }
+    .cards-deck-sticky .card-item:nth-child(3) { z-index: 12; }
+
+    /* TRATAMIENTO 2 PÍLDORAS CENTRADAS: TÍTULO EN BAHNSCHRIFT BOLD + SUBTÍTULO COLOR LIQUID GLASS */
+    #sec-trabajo-profesional .card-overlay-info,
+    #sec-proyectos-academicos .card-overlay-info {
+      position: absolute !important;
+      top: 50% !important;
+      left: 50% !important;
+      bottom: auto !important;
+      right: auto !important;
+      transform: translate(-50%, -50%) !important;
+      text-align: center !important;
+      width: auto !important;
+      max-width: 92% !important;
+      background: transparent !important;
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      border: none !important;
+      box-shadow: none !important;
+      padding: 0 !important;
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      justify-content: center !important;
+      gap: 12px !important;
+      z-index: 10 !important;
+    }
+
+    #sec-trabajo-profesional .card-title,
+    #sec-proyectos-academicos .card-title {
+      display: inline-block !important;
+      background: rgba(18, 18, 22, 0.52) !important;
+      backdrop-filter: blur(18px) saturate(180%) !important;
+      -webkit-backdrop-filter: blur(18px) saturate(180%) !important;
+      border: 1px solid rgba(255, 255, 255, 0.22) !important;
+      border-radius: 9999px !important;
+      box-shadow: 0 14px 36px rgba(0, 0, 0, 0.3) !important;
+      padding: 16px 42px !important;
+      font-family: 'Bahnschrift', 'DIN Alternate', 'Franklin Gothic Medium', sans-serif !important;
+      font-size: clamp(1.25rem, 2.6vw, 2.9rem) !important;
+      font-weight: 700 !important;
+      letter-spacing: 0.04em !important;
+      line-height: 1.15 !important;
+      color: #ffffff !important;
+      text-transform: uppercase !important;
+      text-shadow: none !important;
+      white-space: nowrap !important;
+      margin: 0 !important;
+      max-width: 100% !important;
+    }
+
+    #sec-trabajo-profesional .card-category,
+    #sec-proyectos-academicos .card-category {
+      display: inline-block !important;
+      background: rgba(18, 18, 22, 0.52) !important;
+      backdrop-filter: blur(18px) saturate(180%) !important;
+      -webkit-backdrop-filter: blur(18px) saturate(180%) !important;
+      border: 1px solid rgba(255, 255, 255, 0.28) !important;
+      border-radius: 9999px !important;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.22) !important;
+      padding: 8px 24px !important;
+      font-size: clamp(0.82rem, 1vw, 1.05rem) !important;
+      font-weight: 600 !important;
+      color: #ffffff !important;
+      letter-spacing: 0.04em !important;
+      text-transform: none !important;
+      text-shadow: none !important;
+      white-space: nowrap !important;
+      margin: 0 !important;
+    }
+
+    /* COLORES ESPECÍFICOS DE SUBTÍTULOS PROFESIONALES */
+    #prof-hiba .card-category {
+      background: rgba(174, 104, 84, 0.62) !important;
+      border-color: rgba(255, 255, 255, 0.32) !important;
+    }
+
+    #prof-issf .card-category {
+      background: rgba(92, 105, 124, 0.62) !important;
+      border-color: rgba(255, 255, 255, 0.32) !important;
+    }
+
+    #prof-odeon .card-category {
+      background: rgba(222, 158, 48, 0.62) !important;
+      border-color: rgba(255, 255, 255, 0.32) !important;
+    }
+
+    /* COLORES ESPECÍFICOS DE SUBTÍTULOS ACADÉMICOS */
+    #acad-3 .card-category {
+      background: rgba(192, 80, 72, 0.62) !important;
+      border-color: rgba(255, 255, 255, 0.32) !important;
+    }
+
+    #acad-5 .card-category {
+      background: rgba(198, 166, 115, 0.62) !important;
+      border-color: rgba(255, 255, 255, 0.32) !important;
+    }
+
+    #acad-4 .card-category {
+      background: rgba(130, 84, 131, 0.62) !important;
+      border-color: rgba(255, 255, 255, 0.32) !important;
+    }
+
+    /* CONTENEDOR DE LÁMINAS A PANTALLA COMPLETA VERTICAL (SIN RECORTES) */
+    .pm-sheets-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+      width: 100%;
+      margin-top: 30px;
+    }
+
+    .pm-sheet-item {
+      width: 100%;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid var(--border-color);
+      background: var(--bg-color);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    }
+
+    body.dark-mode .pm-sheet-item {
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    }
+
+    .pm-sheet-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: contain;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- INTRO OVERLAY EN NEGRO CON CASCADA INVERSA & BARRIDA HACIA ARRIBA -->
+  <div id="intro-overlay" class="intro-overlay">
+    <div class="intro-content">
+      <div class="intro-name-wrapper" id="intro-name-wrapper">
+        <span class="intro-letter" style="animation-delay: 0.06s">A</span><span class="intro-letter" style="animation-delay: 0.10s">g</span><span class="intro-letter" style="animation-delay: 0.14s">u</span><span class="intro-letter" style="animation-delay: 0.18s">s</span><span class="intro-letter" style="animation-delay: 0.22s">t</span><span class="intro-letter" style="animation-delay: 0.26s">í</span><span class="intro-letter" style="animation-delay: 0.30s">n</span>
+        <span class="intro-space">&nbsp;</span>
+        <span class="intro-letter" style="animation-delay: 0.36s">L</span><span class="intro-letter" style="animation-delay: 0.40s">a</span><span class="intro-letter" style="animation-delay: 0.44s">b</span><span class="intro-letter" style="animation-delay: 0.48s">a</span><span class="intro-letter" style="animation-delay: 0.52s">j</span><span class="intro-letter" style="animation-delay: 0.56s">i</span><span class="intro-letter" style="animation-delay: 0.60s">a</span><span class="intro-letter" style="animation-delay: 0.64s">n</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- CURSOR CARTESIANO DE PANTALLA COMPLETA CON PUNTO INVERTIDO Y PÍLDORA INTERACTIVA -->
+  <div class="custom-cursor-container" id="custom-cursor">
+    <div class="cursor-axis cursor-axis-h" id="cursor-axis-h"></div>
+    <div class="cursor-axis cursor-axis-v" id="cursor-axis-v"></div>
+    <div class="cursor-center-dot" id="cursor-dot">
+      <span class="cursor-pill-text" id="cursor-pill-text">Ver Proyecto</span>
+    </div>
+  </div>
+
+  <!-- BARRA SUPERIOR FIJA -->
+  <header class="top-header-bar" id="top-header">
+    <!-- BOTÓN HOME TEXTO INTERACTIVO CON MINI ICOSAEDRO ROTATORIO: A (IZQUIERDA) -->
+    <div class="home-brand-btn" onclick="goHome()" role="button" aria-label="Ir al Inicio">
+      <span class="home-brand-ico-symbol" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="26" height="26" fill="none">
+          <polygon points="8.5,10.5 15.5,10.5 12,17" fill="#e8a8a0" stroke="rgba(255,255,255,0.4)" stroke-width="0.5"/>
+          <polygon points="12,2.5 8.5,10.5 15.5,10.5" fill="#f5c2bb" stroke="rgba(255,255,255,0.4)" stroke-width="0.5"/>
+          <polygon points="12,2.5 4,7.5 8.5,10.5" fill="#db978f" stroke="rgba(255,255,255,0.3)" stroke-width="0.5"/>
+          <polygon points="12,2.5 20,7.5 15.5,10.5" fill="#c48078" stroke="rgba(255,255,255,0.3)" stroke-width="0.5"/>
+          <polygon points="4,7.5 4,16.5 8.5,10.5" fill="#b8746c" stroke="rgba(255,255,255,0.25)" stroke-width="0.5"/>
+          <polygon points="20,7.5 20,16.5 15.5,10.5" fill="#a6625a" stroke="rgba(255,255,255,0.25)" stroke-width="0.5"/>
+          <polygon points="4,16.5 12,17 8.5,10.5" fill="#cf8b83" stroke="rgba(255,255,255,0.3)" stroke-width="0.5"/>
+          <polygon points="20,16.5 12,17 15.5,10.5" fill="#99554d" stroke="rgba(255,255,255,0.3)" stroke-width="0.5"/>
+          <polygon points="4,16.5 12,21.5 12,17" fill="#8c4840" stroke="rgba(255,255,255,0.2)" stroke-width="0.5"/>
+          <polygon points="20,16.5 12,21.5 12,17" fill="#7f3b33" stroke="rgba(255,255,255,0.2)" stroke-width="0.5"/>
+        </svg>
+      </span>
+      <span class="home-brand-icon">A</span>
+      <span class="home-brand-text">gustín Labajian</span>
+    </div>
+  </header>
+
+  <!-- CONTROLES SUPERIORES (TEMA E IDIOMA) EQUIDISTANTES DEL EJE VERTICAL CENTRAL -->
+  <div class="top-center-controls" id="top-center-controls" aria-label="Configuración de tema e idioma">
+    <button class="top-circle-btn theme-toggle-btn" id="dark-mode-toggle" onclick="toggleDarkMode()" aria-label="Cambiar tema (Modo claro / Modo noche)">
+      <span class="theme-lamp-wrap" id="theme-lamp-wrap">
+        <svg class="theme-icon icon-sun" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+        <svg class="theme-icon icon-moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+      </span>
+    </button>
+    <button class="top-circle-btn lang-toggle-btn" id="lang-toggle" onclick="toggleLanguage()" aria-label="Cambiar idioma (ES / EN)">
+      <span class="btn-sweep-wrapper">
+        <span class="btn-sweep-text" id="lang-badge-1">ES</span>
+        <span class="btn-sweep-text" id="lang-badge-2">ES</span>
+      </span>
+    </button>
+  </div>
+
+  <!-- BARRA LATERAL DE SCROLL JERÁRQUICA E INTERACTIVA (PANTALLA PRINCIPAL / MODALES EN PRIMER PLANO) -->
+  <aside class="lateral-scrollbar" id="lateral-scrollbar" aria-label="Control de desplazamiento lateral">
+    <div class="lateral-scrollbar-track" id="lateral-scrollbar-track" role="scrollbar" aria-orientation="vertical">
+      <div class="lateral-scrollbar-thumb" id="lateral-scrollbar-thumb"></div>
+    </div>
+  </aside>
+
+  <!-- MENÚ FLOTANTE HORIZONTAL EN EL FILO INFERIOR CON ATAJOS A LA VISTA & INDICADOR DE ASCENSOR -->
+  <nav class="bottom-floating-pill" id="bottom-pill-menu" aria-label="Navegación principal">
+    <div class="bottom-pill-list" id="bottom-pill-list">
+      <div class="bottom-pill-slider" id="bottom-pill-slider" aria-hidden="true"></div>
+      <button onclick="scrollToSection('sec-trabajo-profesional')" class="bottom-pill-btn" data-section="sec-trabajo-profesional" aria-label="Ir a Trabajos Profesionales">
+        <span class="btn-sweep-wrapper">
+          <span class="btn-sweep-text" data-i18n="menuProf">Profesionales</span>
+          <span class="btn-sweep-text" data-i18n="menuProf">Profesionales</span>
+        </span>
+      </button>
+      <button onclick="scrollToSection('sec-proyectos-academicos')" class="bottom-pill-btn" data-section="sec-proyectos-academicos" aria-label="Ir a Proyectos Académicos">
+        <span class="btn-sweep-wrapper">
+          <span class="btn-sweep-text" data-i18n="menuAcad">Académicos</span>
+          <span class="btn-sweep-text" data-i18n="menuAcad">Académicos</span>
+        </span>
+      </button>
+      <button onclick="scrollToSection('sec-escritos')" class="bottom-pill-btn" data-section="sec-escritos" aria-label="Ir a Escritos">
+        <span class="btn-sweep-wrapper">
+          <span class="btn-sweep-text" data-i18n="menuEsc">Escritos</span>
+          <span class="btn-sweep-text" data-i18n="menuEsc">Escritos</span>
+        </span>
+      </button>
+      <button onclick="scrollToSection('sec-fotografia')" class="bottom-pill-btn" data-section="sec-fotografia" aria-label="Ir a Fotografía">
+        <span class="btn-sweep-wrapper">
+          <span class="btn-sweep-text" data-i18n="menuFoto">Fotografía</span>
+          <span class="btn-sweep-text" data-i18n="menuFoto">Fotografía</span>
+        </span>
+      </button>
+      <button onclick="scrollToSection('sec-cv')" class="bottom-pill-btn" data-section="sec-cv" aria-label="Ir a Información Personal">
+        <span class="btn-sweep-wrapper">
+          <span class="btn-sweep-text" data-i18n="menuInfo">Información</span>
+          <span class="btn-sweep-text" data-i18n="menuInfo">Información</span>
+        </span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- PANTALLA PRINCIPAL (HOME) -->
+  <section id="home-screen">
+    <!-- CANVAS 3D INTERACTIVO CON 2 ICOSAEDROS METÁLICOS #f29197 QUE ORBITAN, ROTAN Y SE PUEDEN AGARRAR Y TIRAR -->
+    <canvas id="home-3d-canvas" class="home-3d-canvas"></canvas>
+
+    <div class="home-container">
+      <div class="home-bottom-layout">
+        <!-- SUBTÍTULO CON BARRIDO DESDE ABAJO Y CASCADA INVERTIDA LETRA POR LETRA -->
+        <p class="home-subtitle-top" id="home-sub-text">
+          <span class="sub-char" style="transition-delay: 0.10s">E</span><span class="sub-char" style="transition-delay: 0.12s">s</span><span class="sub-char" style="transition-delay: 0.14s">t</span><span class="sub-char" style="transition-delay: 0.16s">u</span><span class="sub-char" style="transition-delay: 0.18s">d</span><span class="sub-char" style="transition-delay: 0.20s">i</span><span class="sub-char" style="transition-delay: 0.22s">a</span><span class="sub-char" style="transition-delay: 0.24s">n</span><span class="sub-char" style="transition-delay: 0.26s">t</span><span class="sub-char" style="transition-delay: 0.28s">e</span>
+          <span class="sub-space">&nbsp;</span>
+          <span class="sub-char" style="transition-delay: 0.32s">a</span><span class="sub-char" style="transition-delay: 0.34s">v</span><span class="sub-char" style="transition-delay: 0.36s">a</span><span class="sub-char" style="transition-delay: 0.38s">n</span><span class="sub-char" style="transition-delay: 0.40s">z</span><span class="sub-char" style="transition-delay: 0.42s">a</span><span class="sub-char" style="transition-delay: 0.44s">d</span><span class="sub-char" style="transition-delay: 0.46s">o</span>
+          <span class="sub-space">&nbsp;</span>
+          <span class="sub-char" style="transition-delay: 0.50s">d</span><span class="sub-char" style="transition-delay: 0.52s">e</span>
+          <span class="sub-space">&nbsp;</span>
+          <span class="sub-char" style="transition-delay: 0.56s">A</span><span class="sub-char" style="transition-delay: 0.58s">r</span><span class="sub-char" style="transition-delay: 0.60s">q</span><span class="sub-char" style="transition-delay: 0.62s">u</span><span class="sub-char" style="transition-delay: 0.64s">i</span><span class="sub-char" style="transition-delay: 0.66s">t</span><span class="sub-char" style="transition-delay: 0.68s">e</span><span class="sub-char" style="transition-delay: 0.70s">c</span><span class="sub-char" style="transition-delay: 0.72s">t</span><span class="sub-char" style="transition-delay: 0.74s">u</span><span class="sub-char" style="transition-delay: 0.76s">r</span><span class="sub-char" style="transition-delay: 0.78s">a</span>
+          <span class="sub-space">&nbsp;</span>
+          <span class="sub-char" style="transition-delay: 0.82s">|</span>
+          <span class="sub-space">&nbsp;</span>
+          <span class="sub-char" style="transition-delay: 0.86s">F</span><span class="sub-char" style="transition-delay: 0.88s">A</span><span class="sub-char" style="transition-delay: 0.90s">D</span><span class="sub-char" style="transition-delay: 0.92s">U</span><span class="sub-char" style="transition-delay: 0.94s">-</span><span class="sub-char" style="transition-delay: 0.96s">U</span><span class="sub-char" style="transition-delay: 0.98s">B</span><span class="sub-char" style="transition-delay: 1.00s">A</span>
+        </p>
+        
+        <!-- NOMBRE DIVIDIDO: AGUSTÍN A LA IZQUIERDA, LABAJIAN A LA DERECHA (CASCADA INVERSA LENTA LETRA POR LETRA) -->
+        <div class="home-split-name" id="home-split-name">
+          <div class="home-name-block home-name-first">
+            <span class="home-char" style="transition-delay: 0.25s">A</span><span class="home-char" style="transition-delay: 0.35s">g</span><span class="home-char" style="transition-delay: 0.45s">u</span><span class="home-char" style="transition-delay: 0.55s">s</span><span class="home-char" style="transition-delay: 0.65s">t</span><span class="home-char" style="transition-delay: 0.75s">í</span><span class="home-char" style="transition-delay: 0.85s">n</span>
+          </div>
+          <div class="home-name-block home-name-last">
+            <span class="home-char" style="transition-delay: 0.95s">L</span><span class="home-char" style="transition-delay: 1.05s">a</span><span class="home-char" style="transition-delay: 1.15s">b</span><span class="home-char" style="transition-delay: 1.25s">a</span><span class="home-char" style="transition-delay: 1.35s">j</span><span class="home-char" style="transition-delay: 1.45s">i</span><span class="home-char" style="transition-delay: 1.55s">a</span><span class="home-char" style="transition-delay: 1.65s">n</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ESPACIO DE TRANSICIÓN EN BLANCO CON FRASE EDITORIAL CENTRADA QUE SE PINTA DE NEGRO AL SCROLLEAR -->
+  <section id="home-transition-spacer" class="home-transition-spacer">
+    <div class="transition-quote-sticky">
+      <div class="transition-quote-container">
+        <p class="transition-quote-text" id="transition-quote-text" data-i18n="homeQuote">“Incluso un ladrillo quiere ser algo.”</p>
+        <p class="transition-quote-author" id="transition-quote-author" data-i18n="homeQuoteAuthor">Louis Kahn, Arquitecto</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTENIDO DE SCROLL CONTINUO -->
+  <main class="main-container" id="main-content">
+
+    <!-- SECCIÓN 01: TRABAJOS PROFESIONALES (3 EN TOTAL) -->
+    <section id="sec-trabajo-profesional" class="page-section">
+      <div class="section-header-row">
+        <h2 class="section-title"><span data-i18n="secTrabajo">Trabajos Profesionales</span> <span class="section-count">(3)</span></h2>
+        <button class="explore-all-btn" onclick="openAllProjectsModal('prof')" aria-label="Ver todos los Trabajos Profesionales">
+          <span class="btn-sweep-wrapper">
+            <span class="btn-sweep-text" data-i18n="exploreProfBtn">Ver todos los Trabajos Profesionales</span>
+            <span class="btn-sweep-text" data-i18n="exploreProfBtn">Ver todos los Trabajos Profesionales</span>
+          </span>
+          <span class="explore-arrow-wrap">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </span>
+        </button>
+      </div>
+
+      <div class="cards-deck-wrapper" id="deck-prof">
+        <div class="cards-deck-sticky">
+          <!-- FICHA 1 -->
+          <article class="card-item" id="prof-hiba" onclick="openProjectModal('prof-hiba')">
+            <div class="card-img-wrapper">
+              <img class="card-img" src="assets/trabajos profesionales/hiba academy bay area/00_portada.webp" alt="HIBA Academy Bay Area">
+              <div class="card-overlay-info">
+                <h3 class="card-title" data-i18n="profHibaTitle">HIBA Academy Bay Area</h3>
+                <span class="card-category" data-i18n="profHibaCat">Educativo</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- FICHA 2 -->
+          <article class="card-item" id="prof-issf" onclick="openProjectModal('prof-issf')">
+            <div class="card-img-wrapper">
+              <img class="card-img" src="assets/trabajos profesionales/international school of san francisco/00_portada.webp" alt="International School of San Francisco">
+              <div class="card-overlay-info">
+                <h3 class="card-title" data-i18n="profIssfTitle">International School of San Francisco</h3>
+                <span class="card-category" data-i18n="profIssfCat">Educativo</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- FICHA 3 -->
+          <article class="card-item" id="prof-odeon" onclick="openProjectModal('prof-odeon')">
+            <div class="card-img-wrapper">
+              <img class="card-img" src="assets/trabajos profesionales/teatro odeon/00_portada.webp" alt="Teatro Odeón">
+              <div class="card-overlay-info">
+                <h3 class="card-title" data-i18n="profOdeonTitle">Teatro Odeón</h3>
+                <span class="card-category" data-i18n="profOdeonCat">Cultural</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 02: PROYECTOS ACADÉMICOS (6 EN TOTAL, 3 DESTACADOS) -->
+    <section id="sec-proyectos-academicos" class="page-section">
+      <div class="section-header-row">
+        <h2 class="section-title"><span data-i18n="secProyectos">Proyectos Académicos</span> <span class="section-count">(7)</span></h2>
+        <button class="explore-all-btn" onclick="openAllProjectsModal('acad')" aria-label="Ver todos los Proyectos Académicos">
+          <span class="btn-sweep-wrapper">
+            <span class="btn-sweep-text" data-i18n="exploreAcadBtn">Ver todos los Proyectos Académicos</span>
+            <span class="btn-sweep-text" data-i18n="exploreAcadBtn">Ver todos los Proyectos Académicos</span>
+          </span>
+          <span class="explore-arrow-wrap">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </span>
+        </button>
+      </div>
+
+      <div class="cards-deck-wrapper" id="deck-acad">
+        <div class="cards-deck-sticky">
+          <!-- FICHA 1: CENTRO CULTURAL LOBOS -->
+          <article class="card-item" id="acad-3" onclick="openProjectModal('acad-3')">
+            <div class="card-img-wrapper">
+              <img class="card-img" src="assets/proyectos academicos/centro cultural lobos/00_portada.webp" alt="Centro Cultural Lobos">
+              <div class="card-overlay-info">
+                <h3 class="card-title" data-i18n="acad3Title">Centro Cultural Lobos</h3>
+                <span class="card-category" data-i18n="acad3Cat">Arquitectura III – Jury</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- FICHA 2: RESTAURANTE -->
+          <article class="card-item" id="acad-5" onclick="openProjectModal('acad-5')">
+            <div class="card-img-wrapper">
+              <img class="card-img" src="assets/proyectos academicos/restaurante/00_portada.webp" alt="Restaurante">
+              <div class="card-overlay-info">
+                <h3 class="card-title" data-i18n="acad5Title">Restaurante</h3>
+                <span class="card-category" data-i18n="acad5Cat">Arquitectura I</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- FICHA 3: PLAZA BAJO VIADUCTO -->
+          <article class="card-item" id="acad-4" onclick="openProjectModal('acad-4')">
+            <div class="card-img-wrapper">
+              <img class="card-img" src="assets/proyectos academicos/plaza sobre viaducto/00_portada.webp" alt="Plaza bajo Viaducto">
+              <div class="card-overlay-info">
+                <h3 class="card-title" data-i18n="acad4Title">Plaza bajo Viaducto</h3>
+                <span class="card-category" data-i18n="acad4Cat">Arquitectura II</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 03: ESCRITOS (FORMATO LISTA: IMAGEN A LA IZQUIERDA, TEXTO Y SÍNTESIS A LA DERECHA) -->
+    <section id="sec-escritos" class="page-section">
+      <div class="section-header-row">
+        <h2 class="section-title"><span data-i18n="secEscritos">Escritos</span> <span class="section-count">(3)</span></h2>
+        <button class="explore-all-btn" onclick="openAllProjectsModal('esc')" aria-label="Ver todos los Escritos">
+          <span class="btn-sweep-wrapper">
+            <span class="btn-sweep-text" data-i18n="exploreEscBtn">Ver todos los Escritos</span>
+            <span class="btn-sweep-text" data-i18n="exploreEscBtn">Ver todos los Escritos</span>
+          </span>
+          <span class="explore-arrow-wrap">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </span>
+        </button>
+      </div>
+
+      <div class="essays-list-container">
+        <!-- ESCRITO 1 -->
+        <article class="essay-list-item" id="esc-1" onclick="openProjectModal('esc-1')">
+          <div class="essay-list-thumb">
+            <img class="essay-list-img" src="assets/escritos/intersticio entre la apertura y la clausura/00_portada.webp" alt="Intersticio: entre la apertura y la clausura">
+          </div>
+          <div class="essay-list-content">
+            <h3 class="essay-list-title" data-i18n="esc1Title">Intersticio: entre la apertura y la clausura</h3>
+            <span class="essay-list-category" data-i18n="esc1Cat">Teoría de la Arquitectura</span>
+            <p class="essay-list-summary" data-i18n="esc1Summary">Ensayo teórico sobre los límites, las fricciones urbanas y los espacios indeterminados donde la arquitectura opera como campo de posibilidad entre sistemas consolidados.</p>
+          </div>
+        </article>
+
+        <!-- ESCRITO 2 -->
+        <article class="essay-list-item" id="esc-2" onclick="openProjectModal('esc-2')">
+          <div class="essay-list-thumb">
+            <img class="essay-list-img" src="assets/escritos/interpretación local de un fenómeno global/00_portada.webp" alt="Interpretación local de un fenómeno global">
+          </div>
+          <div class="essay-list-content">
+            <h3 class="essay-list-title" data-i18n="esc2Title">Interpretación local de un fenómeno global</h3>
+            <span class="essay-list-category" data-i18n="esc2Cat">Arquitectura, Arte y Diseño Argentino</span>
+            <p class="essay-list-summary" data-i18n="esc2Summary">Análisis crítico y contextual de la Torre Odeón y la apropiación vernácula del ladrillo visto como traducción identitaria de las corrientes internacionales.</p>
+          </div>
+        </article>
+
+        <!-- ESCRITO 3 -->
+        <article class="essay-list-item" id="esc-4" onclick="openProjectModal('esc-4')">
+          <div class="essay-list-thumb">
+            <img class="essay-list-img" src="assets/escritos/la arquitectura como propaganda politica/00_portada.webp" alt="La Arquitectura como Propaganda Política">
+          </div>
+          <div class="essay-list-content">
+            <h3 class="essay-list-title" data-i18n="esc4Title">La Arquitectura como Propaganda Política</h3>
+            <span class="essay-list-category" data-i18n="esc4Cat">Historia III</span>
+            <p class="essay-list-summary" data-i18n="esc4Summary">Investigación audiovisual y ensayística sobre el rol del espacio público y la arquitectura monumental como dispositivos de legitimación y discurso de poder.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 04: FOTOGRAFÍA (MOSAICO DE 9 IMÁGENES CON BORDES REDONDEADOS SIN TEXTO) -->
+    <section id="sec-fotografia" class="page-section">
+      <div class="section-header-row">
+        <h2 class="section-title"><span data-i18n="secFotografia">Fotografía</span> <span class="section-count">(9)</span></h2>
+        <a href="fotografia.html" class="explore-all-btn" aria-label="Ver todas las Fotografías">
+          <span class="btn-sweep-wrapper">
+            <span class="btn-sweep-text" data-i18n="exploreFotoBtn">Ver todas las Fotografías</span>
+            <span class="btn-sweep-text" data-i18n="exploreFotoBtn">Ver todas las Fotografías</span>
+          </span>
+          <span class="explore-arrow-wrap">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </span>
+        </a>
+      </div>
+
+      <div class="photo-mosaic-grid" id="home-photo-grid">
+        <!-- Renderizado dinámico y aleatorio de 9 fotos con JavaScript -->
+      </div>
+    </section>
+
+    <!-- SECCIÓN 05: INFORMACIÓN PERSONAL -->
+    <section id="sec-cv" class="page-section">
+      <h2 class="section-title" data-i18n="secCv">Información Personal</h2>
+
+      <div class="cv-flow">
+
+        <!-- ENCABEZADO: DATOS PRINCIPALES CON FOTO CIRCULAR Y BIO A LA DERECHA -->
+        <div class="cv-header-block">
+          <div class="cv-header-info">
+            <div class="cv-name">Agustín Labajian</div>
+            <div class="cv-title-sub" data-i18n="cvRoleTitle">Maestro Mayor de Obras</div>
+            <div class="cv-profile-row">
+              <div class="cv-photo-wrapper">
+                <img src="assets/foto de perfil.webp" alt="Agustín Labajian" class="cv-avatar-img">
+              </div>
+              <p class="cv-bio" data-i18n="cvBio">
+                Estudiante avanzado de Arquitectura (FADU–UBA) y Maestro Mayor de Obras, con experiencia en modelado BIM y documentación técnica en estudios nacionales e internacionales. Manejo avanzado de Revit y fuerte interés en el área de proyecto y representación arquitectónica.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- INFORMACIÓN DE CONTACTO -->
+        <div class="cv-block">
+          <div class="cv-section-h3" data-i18n="cvContactHead">Información de Contacto</div>
+          <div class="cv-contact-grid">
+            <div class="cv-contact-item">
+              <span data-i18n="cvEmailLabel">Correo electrónico</span>
+              <a href="mailto:agustinlabajian@gmail.com" class="contact-link">agustinlabajian@gmail.com</a>
+            </div>
+            <div class="cv-contact-item">
+              <span data-i18n="cvPhoneLabel">Teléfono</span>
+              <a href="tel:+5491153139024" class="contact-link">+54 9 11 5313-9024</a>
+            </div>
+            <div class="cv-contact-item">
+              <span data-i18n="cvLocationLabel">Dirección</span>
+              C.A.B.A., Argentina
+            </div>
+          </div>
+        </div>
+
+        <!-- EDUCACIÓN -->
+        <div class="cv-block">
+          <div class="cv-section-h3" data-i18n="cvEduHead">Educación</div>
+          
+          <div class="cv-item">
+            <div class="cv-item-header">
+              <span class="cv-item-role"><span data-i18n="cvEdu1Degree">Arquitectura</span> <span class="cv-item-status" data-i18n="cvEdu1Status">— en curso (2 materias pendientes)</span></span>
+              <span class="cv-item-date" data-i18n="cvEduItem1Date">2021 – act.</span>
+            </div>
+            <div class="cv-item-subline">
+              <span class="cv-item-company" data-i18n="cvEdu1School">Universidad de Buenos Aires</span>
+            </div>
+            <div class="cv-item-subline">
+              <span class="cv-item-subfaculty" data-i18n="cvEdu1Faculty">Facultad de Arquitectura, Diseño y Urbanismo</span>
+            </div>
+          </div>
+
+          <div class="cv-item">
+            <div class="cv-item-header">
+              <span class="cv-item-role" data-i18n="cvEduItem2Role">Maestro Mayor de Obras</span>
+              <span class="cv-item-date" data-i18n="cvEduItem2Date">2013 – 2019</span>
+            </div>
+            <div class="cv-item-subline">
+              <span class="cv-item-company" data-i18n="cvEdu2Level">Escuela Secundaria Técnica</span>
+            </div>
+            <div class="cv-item-subline">
+              <span class="cv-item-subfaculty" data-i18n="cvEdu2School">Instituto Tecnológico San Bonifacio</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- EXPERIENCIA LABORAL -->
+        <div class="cv-block">
+          <div class="cv-section-h3" data-i18n="cvExpHead">Experiencia Laboral</div>
+
+          <!-- 1. MODELADOR BIM JUNIOR -->
+          <div class="cv-item">
+            <div class="cv-item-header">
+              <span class="cv-item-role" data-i18n="exp1Role">Modelador BIM Junior</span>
+              <span class="cv-item-date" data-i18n="exp1Date">feb 2025 – act.</span>
+            </div>
+            <div class="cv-item-subline">
+              <span class="cv-item-company">CA architects</span>
+            </div>
+            <ul class="cv-bullets">
+              <li data-i18n="exp1B1">Desarrollo y modelado BIM en Revit de documentación técnica para proyectos de mediana escala (establecimientos educativos), trabajando en idioma inglés y bajo el sistema imperial de unidades.</li>
+              <li data-i18n="exp1B2">Elaboración de Permit Sets completos para las fases de Design Development (DD) y Construction Documents (CD), adaptando el diseño a los códigos de edificación de San Francisco.</li>
+              <li data-i18n="exp1B3">Gestión de la fase de administración de obra (CA): resolución y respuesta integral de RFI's (Requests for Information) y Submittals, manteniendo la organización y actualización constante del log de seguimiento.</li>
+              <li data-i18n="exp1B4">Armado de presentaciones ejecutivas y material gráfico orientado a la comunicación del proyecto y revisión con los comitentes.</li>
+            </ul>
+          </div>
+
+          <!-- 2. DIBUJANTE JUNIOR -->
+          <div class="cv-item">
+            <div class="cv-item-header">
+              <span class="cv-item-role" data-i18n="exp2Role">Dibujante Junior</span>
+              <span class="cv-item-date" data-i18n="exp2Date">feb 2024 – abr 2024</span>
+            </div>
+            <div class="cv-item-subline">
+              <span class="cv-item-company">AVSA Arquitectura S.R.L.</span>
+              <span class="cv-item-tag" data-i18n="exp2Tag">temporario</span>
+            </div>
+            <ul class="cv-bullets">
+              <li data-i18n="exp2B1">Participación en el desarrollo del proyecto ejecutivo del Teatro de la Torre Odeón (Av. Corrientes).</li>
+              <li data-i18n="exp2B2">Documentación técnica y elaboración de planos ejecutivos.</li>
+              <li data-i18n="exp2B3">Actualización y control de coherencia gráfica y precisión constructiva según requerimientos del proyecto.</li>
+            </ul>
+          </div>
+
+          <!-- 3. AYUDANTE ADMINISTRATIVO -->
+          <div class="cv-item">
+            <div class="cv-item-header">
+              <span class="cv-item-role" data-i18n="exp3Role">Ayudante Administrativo</span>
+              <span class="cv-item-date" data-i18n="exp3Date">nov 2021 – mar 2023</span>
+            </div>
+            <div class="cv-item-subline">
+              <span class="cv-item-company">EQQUS Construcciones S.A.</span>
+            </div>
+            <ul class="cv-bullets">
+              <li data-i18n="exp3B1">Gestión de documentación de obra para un club de campo y la remodelación de un edificio histórico en Av. de Mayo.</li>
+              <li data-i18n="exp3B2">Administración de consorcio de edificio de viviendas multifamiliar.</li>
+              <li data-i18n="exp3B3">Coordinación de tareas de mantenimiento, materiales y mano de obra.</li>
+              <li data-i18n="exp3B4">Gestión de imagen institucional: redes sociales, sitio web y atención al cliente (Community Manager).</li>
+            </ul>
+          </div>
+
+          <!-- 4. MANTENIMIENTO EDILICIO -->
+          <div class="cv-item">
+            <div class="cv-item-header">
+              <span class="cv-item-role" data-i18n="exp4Role">Mantenimiento edilicio</span>
+              <span class="cv-item-date" data-i18n="exp4Date">may 2019 – nov 2019</span>
+            </div>
+            <div class="cv-item-subline">
+              <span class="cv-item-company">AD Barbieri S.A.</span>
+              <span class="cv-item-tag" data-i18n="exp4Tag">pasantía</span>
+            </div>
+            <ul class="cv-bullets">
+              <li data-i18n="exp4B1">Tareas de mantenimiento preventivo y correctivo en planta industrial y oficinas.</li>
+              <li data-i18n="exp4B2">Trabajos de montaje y construcción para el sector de exposición de la planta.</li>
+              <li data-i18n="exp4B3">Apoyo técnico general como parte de la formación en escuela secundaria técnica.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- SOFTWARE -->
+        <div class="cv-block">
+          <div class="cv-section-h3" data-i18n="cvSoftHead">Software</div>
+          <div class="skills-matrix">
+            <div class="skills-cat">BIM</div>
+            <div class="skills-list">Revit</div>
+
+            <div class="skills-cat" data-i18n="sk2d">Dibujo 2D</div>
+            <div class="skills-list">AutoCAD</div>
+
+            <div class="skills-cat" data-i18n="sk3d">Modelado 3D</div>
+            <div class="skills-list">SketchUp</div>
+
+            <div class="skills-cat" data-i18n="skRender">Renderizado</div>
+            <div class="skills-list">D5 Render, Lumion, Twinmotion, V-Ray</div>
+
+            <div class="skills-cat" data-i18n="skGraphic">Gráfico</div>
+            <div class="skills-list">Illustrator, Photoshop</div>
+
+            <div class="skills-cat" data-i18n="skAnim">Animación</div>
+            <div class="skills-list">Premiere Pro</div>
+          </div>
+        </div>
+
+        <!-- IDIOMA -->
+        <div class="cv-block">
+          <div class="cv-section-h3" data-i18n="cvLangHead">Idioma</div>
+          <div class="skills-matrix">
+            <div class="skills-cat" data-i18n="langEsName">Español</div>
+            <div class="skills-list" data-i18n="cvLangNative">Nativo</div>
+
+            <div class="skills-cat" data-i18n="langEnName">Inglés</div>
+            <div class="skills-list" data-i18n="cvLangAdv">Avanzado</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ZÓCALO FINAL DE PIE DE PÁGINA -->
+    <footer class="site-footer">
+      <div class="footer-card">
+        <div class="footer-hero-col">
+          <h3 class="footer-big-title" data-i18n="footerTitle">Arquitectura &<br>Modelado BIM.</h3>
+          <p class="footer-subtitle" data-i18n="footerSub">Estudiante avanzado (FADU-UBA)<br>Maestro Mayor de Obras</p>
+        </div>
+
+        <div class="footer-links-col">
+          <span class="footer-section-label" data-i18n="footerMenuLabel">Menú</span>
+          <div class="footer-pills-group">
+            <a onclick="scrollToSection('sec-trabajo-profesional')" class="footer-pill-btn" aria-label="Ir a Profesionales">
+              <span class="btn-sweep-wrapper">
+                <span class="btn-sweep-text" data-i18n="menuProf">Profesionales</span>
+                <span class="btn-sweep-text" data-i18n="menuProf">Profesionales</span>
+              </span>
+            </a>
+            <a onclick="scrollToSection('sec-proyectos-academicos')" class="footer-pill-btn" aria-label="Ir a Académicos">
+              <span class="btn-sweep-wrapper">
+                <span class="btn-sweep-text" data-i18n="menuAcad">Académicos</span>
+                <span class="btn-sweep-text" data-i18n="menuAcad">Académicos</span>
+              </span>
+            </a>
+            <a onclick="scrollToSection('sec-escritos')" class="footer-pill-btn" aria-label="Ir a Escritos">
+              <span class="btn-sweep-wrapper">
+                <span class="btn-sweep-text" data-i18n="menuEsc">Escritos</span>
+                <span class="btn-sweep-text" data-i18n="menuEsc">Escritos</span>
+              </span>
+            </a>
+            <a onclick="scrollToSection('sec-fotografia')" class="footer-pill-btn" aria-label="Ir a Fotografía">
+              <span class="btn-sweep-wrapper">
+                <span class="btn-sweep-text" data-i18n="menuFoto">Fotografía</span>
+                <span class="btn-sweep-text" data-i18n="menuFoto">Fotografía</span>
+              </span>
+            </a>
+            <a onclick="scrollToSection('sec-cv')" class="footer-pill-btn" aria-label="Ir a Información">
+              <span class="btn-sweep-wrapper">
+                <span class="btn-sweep-text" data-i18n="menuInfo">Información</span>
+                <span class="btn-sweep-text" data-i18n="menuInfo">Información</span>
+              </span>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-contact-col">
+          <span class="footer-section-label" data-i18n="footerContactLabel">Contacto</span>
+          <a href="mailto:agustinlabajian@gmail.com" class="footer-contact-mail">agustinlabajian@gmail.com</a>
+
+          <!-- ORDEN EXACTO DE REDES: 1. BEHANCE | 2. INSTAGRAM | 3. LINKEDIN | 4. YOUTUBE -->
+          <div class="footer-social-icons">
+            <a href="https://www.behance.net/agustinlab2e50" target="_blank" rel="noopener noreferrer" aria-label="Behance" class="social-icon-btn">
+              <span class="icon-sweep-wrapper">
+                <span class="icon-sweep-item">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M22 7h-7v-2h7v2zm1.726 10c-.442 1.297-2.029 3-4.726 3-3.101 0-5-2.262-5-5.5 0-3.415 1.961-5.5 4.887-5.5 3.031 0 4.673 2.179 4.673 5.093 0 .426-.046.852-.089 1.157h-6.877c.105 1.472 1.173 2.45 2.505 2.45 1.144 0 1.942-.511 2.259-1.2h2.368zm-4.757-5.5c-1.127 0-1.996.657-2.186 1.833h4.341c-.068-1.107-.905-1.833-2.155-1.833zm-10.969 8.5h-8v-14h7.943c2.409 0 4.057 1.074 4.057 3.031 0 1.344-.757 2.285-1.867 2.678 1.492.394 2.367 1.492 2.367 3.076 0 2.288-1.896 3.215-4.5 3.215zm-4.5-8.5h4c.94 0 1.5-.422 1.5-1.157 0-.787-.63-1.143-1.5-1.143h-4v2.3degzm0 6h4.3c1.071 0 1.7-.442 1.7-1.265 0-.853-.699-1.235-1.7-1.235h-4.3v2.5degz"/></svg>
+                </span>
+                <span class="icon-sweep-item">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M22 7h-7v-2h7v2zm1.726 10c-.442 1.297-2.029 3-4.726 3-3.101 0-5-2.262-5-5.5 0-3.415 1.961-5.5 4.887-5.5 3.031 0 4.673 2.179 4.673 5.093 0 .426-.046.852-.089 1.157h-6.877c.105 1.472 1.173 2.45 2.505 2.45 1.144 0 1.942-.511 2.259-1.2h2.368zm-4.757-5.5c-1.127 0-1.996.657-2.186 1.833h4.341c-.068-1.107-.905-1.833-2.155-1.833zm-10.969 8.5h-8v-14h7.943c2.409 0 4.057 1.074 4.057 3.031 0 1.344-.757 2.285-1.867 2.678 1.492.394 2.367 1.492 2.367 3.076 0 2.288-1.896 3.215-4.5 3.215zm-4.5-8.5h4c.94 0 1.5-.422 1.5-1.157 0-.787-.63-1.143-1.5-1.143h-4v2.3degzm0 6h4.3c1.071 0 1.7-.442 1.7-1.265 0-.853-.699-1.235-1.7-1.235h-4.3v2.5degz"/></svg>
+                </span>
+              </span>
+            </a>
+            <a href="https://www.instagram.com/aguslaba_/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="social-icon-btn">
+              <span class="icon-sweep-wrapper">
+                <span class="icon-sweep-item">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                </span>
+                <span class="icon-sweep-item">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                </span>
+              </span>
+            </a>
+            <a href="https://www.linkedin.com/in/agustin-labajian/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="social-icon-btn">
+              <span class="icon-sweep-wrapper">
+                <span class="icon-sweep-item">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.25V10.9H6.46M7.86 6.74a1.6 1.6 0 1 0 1.6 1.6 1.6 1.6 0 0 0-1.6-1.6Z"/></svg>
+                </span>
+                <span class="icon-sweep-item">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.25V10.9H6.46M7.86 6.74a1.6 1.6 0 1 0 1.6 1.6 1.6 1.6 0 0 0-1.6-1.6Z"/></svg>
+                </span>
+              </span>
+            </a>
+            <a href="https://www.youtube.com/@aguslabajian" target="_blank" rel="noopener noreferrer" aria-label="YouTube" class="social-icon-btn">
+              <span class="icon-sweep-wrapper">
+                <span class="icon-sweep-item">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                </span>
+                <span class="icon-sweep-item">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                </span>
+              </span>
+            </a>
+          </div>
+        </div>
+
+        <!-- MARCA DE AGUA ANONIMATO -->
+        <div class="footer-bg-watermark">ANONIMATO</div>
+      </div>
+
+      <div class="footer-bottom-bar">
+        <p data-i18n="copyright">© 2026 Agustín Labajian. Todos los derechos reservados.</p>
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- PANTALLA COMPLETA / MODAL DE TODOS LOS PROYECTOS EN GRILLA 16:9 CON TÍTULO Y SUBTÍTULO ABAJO -->
+  <div id="all-projects-modal" class="all-projects-modal">
+    <div class="all-projects-backdrop" onclick="closeAllProjectsModal()"></div>
+    <div class="all-projects-content">
+      <header class="section-header-row apm-header">
+        <h2 class="section-title apm-title">
+          <span class="apm-title-text" data-i18n="apmTitle">Todos los Proyectos</span>
+          <span class="section-count apm-count" id="apm-count">(14)</span>
+        </h2>
+        <div class="apm-filters">
+          <button class="apm-filter-btn is-active" data-filter="all" onclick="filterAllProjects('all', this)">
+            <span class="btn-sweep-wrapper">
+              <span class="btn-sweep-text" data-i18n="filterAll">Todos</span>
+              <span class="btn-sweep-text" data-i18n="filterAll">Todos</span>
+            </span>
+          </button>
+          <button class="apm-filter-btn" data-filter="prof" onclick="filterAllProjects('prof', this)">
+            <span class="btn-sweep-wrapper">
+              <span class="btn-sweep-text" data-i18n="secTrabajo">Trabajos Profesionales</span>
+              <span class="btn-sweep-text" data-i18n="secTrabajo">Trabajos Profesionales</span>
+            </span>
+          </button>
+          <button class="apm-filter-btn" data-filter="acad" onclick="filterAllProjects('acad', this)">
+            <span class="btn-sweep-wrapper">
+              <span class="btn-sweep-text" data-i18n="secProyectos">Proyectos Académicos</span>
+              <span class="btn-sweep-text" data-i18n="secProyectos">Proyectos Académicos</span>
+            </span>
+          </button>
+          <button class="apm-filter-btn" data-filter="esc" onclick="filterAllProjects('esc', this)">
+            <span class="btn-sweep-wrapper">
+              <span class="btn-sweep-text" data-i18n="secEscritos">Escritos</span>
+              <span class="btn-sweep-text" data-i18n="secEscritos">Escritos</span>
+            </span>
+          </button>
+        </div>
+      </header>
+
+      <div class="all-projects-grid" id="all-projects-grid">
+        <!-- Renderizado dinámico y completo de las tarjetas 16:9 con título y subtítulo abajo -->
+      </div>
+    </div>
+  </div>
+
+  <!-- PANTALLA COMPLETA / MODAL DE TODAS LAS FOTOGRAFÍAS (MISMA TRANSPARENCIA Y DESENFOQUE QUE TODOS LOS PROYECTOS) -->
+  <div id="all-photos-modal" class="all-projects-modal">
+    <div class="all-projects-backdrop" onclick="closeAllPhotosModal()"></div>
+    <div class="all-projects-content">
+      <header class="section-header-row apm-header">
+        <h2 class="section-title apm-title">
+          <span class="apm-title-text" data-i18n="secFotografia">Fotografía</span>
+          <span class="section-count apm-count" id="all-photos-count">(12)</span>
+        </h2>
+      </header>
+
+      <div class="photo-mosaic-grid" id="all-photos-grid" style="margin-top: 20px;">
+        <!-- Renderizado dinámico de las 12 fotografías -->
+      </div>
+    </div>
+  </div>
+
+  <!-- PANTALLA COMPLETA / MODAL DE FOTOGRAFÍA (SOLO IMAGEN EN GRANDE, SIN BOTÓN NI TEXTO) -->
+  <div id="photo-modal" class="photo-modal" onclick="closePhotoModal()">
+    <div class="photo-modal-backdrop"></div>
+    <div class="photo-modal-content">
+      <img id="photo-modal-img" class="photo-modal-img" src="" alt="Fotografía en grande">
+    </div>
+  </div>
+
+  <!-- NOUVELLE SECCIÓN / MODAL DE DETALLE DE PROYECTO (ESTILO DAMAS - FRAMER TEMPLATE CON NUESTRO DISEÑO) -->
+  <div id="project-modal" class="project-modal">
+    <div class="project-modal-backdrop" onclick="closeProjectModal()"></div>
+    <div class="project-modal-content">
+      
+      <!-- CABECERA DEL PROYECTO -->
+      <header class="pm-header">
+        <h1 id="pm-title" class="pm-title">Hospital Italiano de Buenos Aires (HIBA) — Academia</h1>
+      </header>
+
+      <!-- METADATA Y DESCRIPCIÓN EDITORIAL EN COLUMNAS (ESTILO DAMAS) -->
+      <div class="pm-meta-grid">
+        <div class="pm-meta-left">
+          <div class="pm-meta-item">
+            <span class="pm-meta-label" id="pm-label-cat" data-i18n="pmCategoryLabel">Categoría</span>
+            <span id="pm-category" class="pm-meta-val">Salud & Educación · Documentación & BIM</span>
+          </div>
+          <div class="pm-meta-item">
+            <span class="pm-meta-label" id="pm-label-year" data-i18n="pmYearLabel">Año</span>
+            <span id="pm-year" class="pm-meta-val">2025</span>
+          </div>
+          <div class="pm-meta-item">
+            <span class="pm-meta-label" id="pm-label-role" data-i18n="pmRoleLabel">Rol / Estudio</span>
+            <span id="pm-role" class="pm-meta-val">Modelador BIM Junior · CA architects</span>
+          </div>
+        </div>
+
+        <div class="pm-meta-right">
+          <p id="pm-desc" class="pm-desc">
+            Desarrollo integral de documentación técnica y modelado BIM en Revit para el edificio académico e institucional del Hospital Italiano de Buenos Aires. Optimización de flujos de información y resolución constructiva.
+          </p>
+        </div>
+      </div>
+
+      <!-- IMAGEN HERO PRINCIPAL -->
+      <div class="pm-hero-wrapper">
+        <img id="pm-hero-img" class="pm-hero-img" src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1400&q=80" alt="Proyecto Hero">
+        <figcaption id="pm-hero-caption" class="pm-hero-caption"></figcaption>
+      </div>
+
+      <!-- CONTENEDOR DE CUERPO PERSONALIZADO (PARA ESCRITOS EXTENSOS COMO INTERSTICIO) -->
+      <div id="pm-custom-body" class="pm-custom-body-container"></div>
+
+      <!-- BLOQUE NARRATIVO 1 (ESTÁNDAR) -->
+      <div class="pm-block pm-standard-block">
+        <h2 id="pm-sub1-title" class="pm-subheading">Desarrollo para Impacto & Flexibilidad Constructiva</h2>
+        <p id="pm-sub1-desc" class="pm-subtext">
+          El objetivo principal fue articular un sistema de documentación modular en Revit que garantice máxima precisión constructiva y fácil adaptación ante modificaciones de obra. Cada familia paramétrica fue desarrollada para soportar cómputos métricos exactos y coordinación multidisciplinaria sin interferencias.
+        </p>
+      </div>
+
+      <!-- GALERÍA DE IMÁGENES (2 O 3 COLUMNAS ESTÁNDAR) -->
+      <div id="pm-gallery" class="pm-gallery-grid pm-standard-block">
+        <div class="pm-gallery-item">
+          <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80" alt="Detalle 1">
+        </div>
+        <div class="pm-gallery-item">
+          <img src="https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?auto=format&fit=crop&w=800&q=80" alt="Detalle 2">
+        </div>
+      </div>
+
+      <!-- BLOQUE NARRATIVO 2 (ESTÁNDAR) -->
+      <div class="pm-block pm-standard-block">
+        <h2 id="pm-sub2-title" class="pm-subheading">Lenguaje Visual & Precisión BIM</h2>
+        <p id="pm-sub2-desc" class="pm-subtext">
+          La representación gráfica combina láminas técnicas normadas con esquemas axonométricos expresivos que facilitan la comprensión del proyecto tanto para el equipo de arquitectura como para los comitentes e inspectores de obra.
+        </p>
+      </div>
+
+      <!-- NAVEGACIÓN EN MODAL (PROYECTO ANTERIOR Y SIGUIENTE) -->
+      <div class="pm-footer-nav">
+        <button id="pm-prev-btn" class="pm-nav-btn">
+          <span>←</span>
+          <span class="btn-sweep-wrapper">
+            <span class="btn-sweep-text" data-i18n="pmPrevText">Proyecto Anterior</span>
+            <span class="btn-sweep-text" data-i18n="pmPrevText">Proyecto Anterior</span>
+          </span>
+        </button>
+        <button id="pm-next-btn" class="pm-nav-btn">
+          <span class="btn-sweep-wrapper">
+            <span class="btn-sweep-text" data-i18n="pmNextText">Siguiente Proyecto</span>
+            <span class="btn-sweep-text" data-i18n="pmNextText">Siguiente Proyecto</span>
+          </span>
+          <span>→</span>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="assets/three.min.js"></script>
+  <script src="script.js?v=4.2"></script>
+</body>
+</html>
