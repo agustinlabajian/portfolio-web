@@ -2306,11 +2306,7 @@ const projectsData = [
     desc_ES: '...La arquitectura no es un mero contenedor neutro de actividades humanas, sino un dispositivo ideológico capaz de legitimar el poder, modelar la memoria colectiva y proyectar narrativas hegemónicas. El espacio monumental y el orden urbano operan como herramientas de persuasión y consolidación de regímenes a lo largo de la historia...',
     desc_EN: '...Architecture is not a neutral container for human activities, but an ideological device capable of legitimizing power, shaping collective memory, and projecting hegemonic narratives. Monumental space and urban order operate as instruments of persuasion and consolidation of regimes throughout history...',
     heroImage: 'assets/escritos/la arquitectura como propaganda politica/00_portada.webp',
-    videoEmbedUrl: 'https://www.youtube.com/embed/RjHkpM-3CrI?start=128',
-    sub1Title_ES: 'Investigación & Análisis Audiovisual',
-    sub1Title_EN: 'Research & Audiovisual Analysis',
-    sub1Desc_ES: 'Ensayo crítico y producción audiovisual estructurada en capítulos temáticos sobre la instrumentalización política de las intervenciones urbanas monumentales, los rituales de masas y el simbolismo arquitectónico de Estado.',
-    sub1Desc_EN: 'Critical essay and audiovisual production structured into thematic chapters on the political instrumentalization of monumental urban interventions, mass rituals, and state architectural symbolism.'
+    videoEmbedUrl: 'https://www.youtube.com/embed/RjHkpM-3CrI?start=128'
   },
   {
     id: 'esc-3',
@@ -2324,11 +2320,7 @@ const projectsData = [
     desc_ES: '...Investigación y desarrollo proyectual sobre la coexistencia programática y la mixtura de usos en el tejido urbano contemporáneo, articulando vivienda, trabajo, comercio y espacio colectivo bajo criterios de densidad sostenible e hibridación espacial...',
     desc_EN: '...Research and design development on programmatic coexistence and mixed-use integration in contemporary urban fabric, articulating housing, work, commerce, and collective space under sustainable density criteria...',
     heroImage: 'assets/escritos/mixtura de usos/00_portada.webp',
-    videoEmbedUrl: 'https://www.youtube.com/embed/-RwX5h1fWYA',
-    sub1Title_ES: 'Hibridación Tipológica & Ciudad Compacta',
-    sub1Title_EN: 'Typological Hybridization & Compact City',
-    sub1Desc_ES: 'Estudio de modelos de hibridación programática en parcelas urbanas de escala intermedia, potenciando la vitalidad de la planta baja y la flexibilidad de los usos compartidos.',
-    sub1Desc_EN: 'Study of programmatic hybridization models in intermediate-scale urban plots, enhancing ground floor vitality and shared-use flexibility.'
+    videoEmbedUrl: 'https://www.youtube.com/embed/-RwX5h1fWYA'
   }
 ];
 
