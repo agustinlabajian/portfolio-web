@@ -1448,17 +1448,6 @@ body.dark-mode #acad-4 .card-category {
   cursor: default;
 }
 
-/* =======================================================
-   ESPACIO DE TRANSICIÓN EN BLANCO (1 PANTALLA COMPLETA 100VH)
-   ======================================================= */
-.home-transition-spacer {
-  width: 100%;
-  height: 100vh;
-  min-height: 100vh;
-  background-color: var(--bg-color);
-  position: relative;
-  pointer-events: none;
-}
 
 /* =======================================================
    SECCIÓN ESCRITOS EN FORMATO LISTA VERTICAL (IMAGEN AL BORDE / FONDO BLANCO PURO)

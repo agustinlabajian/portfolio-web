@@ -3022,7 +3022,7 @@ function initPortfolio() {
   // (Aparece únicamente una vez que se pasa la sección de la frase de Louis Kahn)
   // =======================================================
   function updateMenuVisibility() {
-    const quoteSpacer = document.getElementById('transition-quote-spacer');
+    const quoteSpacer = document.getElementById('home-transition-spacer') || document.getElementById('transition-quote-spacer');
     const mainContent = document.getElementById('main-content') || document.getElementById('sec-trabajo-profesional');
     const scrollY = window.scrollY;
 
@@ -3055,7 +3055,7 @@ function initPortfolio() {
     const slider = document.getElementById('bottom-pill-slider');
     if (!bottomPillList || !slider) return;
 
-    const quoteSpacer = document.getElementById('transition-quote-spacer');
+    const quoteSpacer = document.getElementById('home-transition-spacer') || document.getElementById('transition-quote-spacer');
     const scrollY = window.scrollY;
 
     let quoteEnd = 0;
