@@ -1,4 +1,4 @@
-// Estado del idioma, tema y modal
+﻿// Estado del idioma, tema y modal
 let currentLang = 'ES';
 let currentActiveProjectId = null;
 
@@ -891,9 +891,6 @@ const projectsData = [
     customBody_ES: `
       <div class="pm-sheets-stack">
         <div class="pm-sheet-item">
-          <img class="pm-sheet-img" src="assets/trabajos profesionales/hiba academy bay area/01_entry day.webp" alt="HIBA Academy Bay Area - 01_entry day">
-        </div>
-        <div class="pm-sheet-item">
           <img class="pm-sheet-img" src="assets/trabajos profesionales/hiba academy bay area/02_set.webp" alt="HIBA Academy Bay Area - 02_set">
         </div>
         <div class="pm-sheet-item">
@@ -972,9 +969,6 @@ const projectsData = [
 `,
     customBody_EN: `
       <div class="pm-sheets-stack">
-        <div class="pm-sheet-item">
-          <img class="pm-sheet-img" src="assets/trabajos profesionales/hiba academy bay area/01_entry day.webp" alt="HIBA Academy Bay Area - 01_entry day">
-        </div>
         <div class="pm-sheet-item">
           <img class="pm-sheet-img" src="assets/trabajos profesionales/hiba academy bay area/02_set.webp" alt="HIBA Academy Bay Area - 02_set">
         </div>
@@ -1070,9 +1064,6 @@ const projectsData = [
     customBody_ES: `
       <div class="pm-sheets-stack">
         <div class="pm-sheet-item">
-          <img class="pm-sheet-img" src="assets/trabajos profesionales/international school of san francisco/01_ls-ms entry 01.webp" alt="International School of San Francisco - 01_ls-ms entry 01">
-        </div>
-        <div class="pm-sheet-item">
           <img class="pm-sheet-img" src="assets/trabajos profesionales/international school of san francisco/02_set.webp" alt="International School of San Francisco - 02_set">
         </div>
         <div class="pm-sheet-item">
@@ -1163,9 +1154,6 @@ const projectsData = [
 `,
     customBody_EN: `
       <div class="pm-sheets-stack">
-        <div class="pm-sheet-item">
-          <img class="pm-sheet-img" src="assets/trabajos profesionales/international school of san francisco/01_ls-ms entry 01.webp" alt="International School of San Francisco - 01_ls-ms entry 01">
-        </div>
         <div class="pm-sheet-item">
           <img class="pm-sheet-img" src="assets/trabajos profesionales/international school of san francisco/02_set.webp" alt="International School of San Francisco - 02_set">
         </div>
@@ -1273,9 +1261,6 @@ const projectsData = [
     customBody_ES: `
       <div class="pm-sheets-stack">
         <div class="pm-sheet-item">
-          <img class="pm-sheet-img" src="assets/trabajos profesionales/teatro odeon/01_fachada 01.webp" alt="Teatro Odeón - 01_fachada 01">
-        </div>
-        <div class="pm-sheet-item">
           <img class="pm-sheet-img" src="assets/trabajos profesionales/teatro odeon/02_Floor Plan - Ground Floor.webp" alt="Teatro Odeón - 02_Floor Plan - Ground Floor">
         </div>
         <div class="pm-sheet-item">
@@ -1318,9 +1303,6 @@ const projectsData = [
 `,
     customBody_EN: `
       <div class="pm-sheets-stack">
-        <div class="pm-sheet-item">
-          <img class="pm-sheet-img" src="assets/trabajos profesionales/teatro odeon/01_fachada 01.webp" alt="Teatro Odeón - 01_fachada 01">
-        </div>
         <div class="pm-sheet-item">
           <img class="pm-sheet-img" src="assets/trabajos profesionales/teatro odeon/02_Floor Plan - Ground Floor.webp" alt="Teatro Odeón - 02_Floor Plan - Ground Floor">
         </div>
@@ -1379,9 +1361,6 @@ const projectsData = [
     heroImage: 'assets/proyectos academicos/espesores de coexistencia/00_portada.webp',
     customBody_ES: `
       <div class="pm-sheets-stack">
-        <div class="pm-sheet-item">
-          <img class="pm-sheet-img" src="assets/proyectos academicos/espesores de coexistencia/01_portada.webp" alt="Espesores de Coexistencia - 01_portada">
-        </div>
         <div class="pm-sheet-item">
           <img class="pm-sheet-img" src="assets/proyectos academicos/espesores de coexistencia/02_lamina.webp" alt="Espesores de Coexistencia - 02_lamina">
         </div>
@@ -1458,9 +1437,6 @@ const projectsData = [
 `,
     customBody_EN: `
       <div class="pm-sheets-stack">
-        <div class="pm-sheet-item">
-          <img class="pm-sheet-img" src="assets/proyectos academicos/espesores de coexistencia/01_portada.webp" alt="Espesores de Coexistencia - 01_portada">
-        </div>
         <div class="pm-sheet-item">
           <img class="pm-sheet-img" src="assets/proyectos academicos/espesores de coexistencia/02_lamina.webp" alt="Espesores de Coexistencia - 02_lamina">
         </div>
@@ -1770,9 +1746,6 @@ const projectsData = [
     customBody_ES: `
       <div class="pm-sheets-stack">
         <div class="pm-sheet-item">
-          <img class="pm-sheet-img" src="assets/proyectos academicos/centro cultural lobos/01_fachada 01.webp" alt="Centro Cultural Lobos - 01_fachada 01">
-        </div>
-        <div class="pm-sheet-item">
           <img class="pm-sheet-img" src="assets/proyectos academicos/centro cultural lobos/02_planta baja.webp" alt="Centro Cultural Lobos - 02_planta baja">
         </div>
         <div class="pm-sheet-item">
@@ -1830,9 +1803,6 @@ const projectsData = [
 `,
     customBody_EN: `
       <div class="pm-sheets-stack">
-        <div class="pm-sheet-item">
-          <img class="pm-sheet-img" src="assets/proyectos academicos/centro cultural lobos/01_fachada 01.webp" alt="Centro Cultural Lobos - 01_fachada 01">
-        </div>
         <div class="pm-sheet-item">
           <img class="pm-sheet-img" src="assets/proyectos academicos/centro cultural lobos/02_planta baja.webp" alt="Centro Cultural Lobos - 02_planta baja">
         </div>
@@ -1904,9 +1874,6 @@ const projectsData = [
     heroImage: 'assets/proyectos academicos/plaza sobre viaducto/00_portada.webp',
     customBody_ES: `
       <div class="pm-sheets-stack">
-        <div class="pm-sheet-item">
-          <img class="pm-sheet-img" src="assets/proyectos academicos/plaza sobre viaducto/01_axo 01.webp" alt="Plaza bajo Viaducto - 01_axo 01">
-        </div>
         <div class="pm-sheet-item">
           <img class="pm-sheet-img" src="assets/proyectos academicos/plaza sobre viaducto/02_axo 02.webp" alt="Plaza bajo Viaducto - 02_axo 02">
         </div>
@@ -1983,9 +1950,6 @@ const projectsData = [
 `,
     customBody_EN: `
       <div class="pm-sheets-stack">
-        <div class="pm-sheet-item">
-          <img class="pm-sheet-img" src="assets/proyectos academicos/plaza sobre viaducto/01_axo 01.webp" alt="Plaza bajo Viaducto - 01_axo 01">
-        </div>
         <div class="pm-sheet-item">
           <img class="pm-sheet-img" src="assets/proyectos academicos/plaza sobre viaducto/02_axo 02.webp" alt="Plaza bajo Viaducto - 02_axo 02">
         </div>
@@ -2076,9 +2040,6 @@ const projectsData = [
     customBody_ES: `
       <div class="pm-sheets-stack">
         <div class="pm-sheet-item">
-          <img class="pm-sheet-img" src="assets/proyectos academicos/restaurante/01_fachada.webp" alt="Restaurante - 01_fachada">
-        </div>
-        <div class="pm-sheet-item">
           <img class="pm-sheet-img" src="assets/proyectos academicos/restaurante/02_planta.webp" alt="Restaurante - 02_planta">
         </div>
         <div class="pm-sheet-item">
@@ -2097,9 +2058,6 @@ const projectsData = [
 `,
     customBody_EN: `
       <div class="pm-sheets-stack">
-        <div class="pm-sheet-item">
-          <img class="pm-sheet-img" src="assets/proyectos academicos/restaurante/01_fachada.webp" alt="Restaurante - 01_fachada">
-        </div>
         <div class="pm-sheet-item">
           <img class="pm-sheet-img" src="assets/proyectos academicos/restaurante/02_planta.webp" alt="Restaurante - 02_planta">
         </div>
@@ -2133,9 +2091,6 @@ const projectsData = [
     customBody_ES: `
       <div class="pm-sheets-stack">
         <div class="pm-sheet-item">
-          <img class="pm-sheet-img" src="assets/proyectos academicos/vivienda unifamiliar/01_fachada.webp" alt="Vivienda Unifamiliar - 01_fachada">
-        </div>
-        <div class="pm-sheet-item">
           <img class="pm-sheet-img" src="assets/proyectos academicos/vivienda unifamiliar/02_plantas.webp" alt="Vivienda Unifamiliar - 02_plantas">
         </div>
         <div class="pm-sheet-item">
@@ -2157,9 +2112,6 @@ const projectsData = [
 `,
     customBody_EN: `
       <div class="pm-sheets-stack">
-        <div class="pm-sheet-item">
-          <img class="pm-sheet-img" src="assets/proyectos academicos/vivienda unifamiliar/01_fachada.webp" alt="Vivienda Unifamiliar - 01_fachada">
-        </div>
         <div class="pm-sheet-item">
           <img class="pm-sheet-img" src="assets/proyectos academicos/vivienda unifamiliar/02_plantas.webp" alt="Vivienda Unifamiliar - 02_plantas">
         </div>
@@ -2196,9 +2148,6 @@ const projectsData = [
     customBody_ES: `
       <div class="pm-sheets-stack">
         <div class="pm-sheet-item">
-          <img class="pm-sheet-img" src="assets/proyectos academicos/plaza/01_plaza_paisaje.webp" alt="Plaza - 01_plaza_paisaje">
-        </div>
-        <div class="pm-sheet-item">
           <img class="pm-sheet-img" src="assets/proyectos academicos/plaza/02_plaza_01.webp" alt="Plaza - 02_plaza_01">
         </div>
         <div class="pm-sheet-item">
@@ -2229,9 +2178,6 @@ const projectsData = [
 `,
     customBody_EN: `
       <div class="pm-sheets-stack">
-        <div class="pm-sheet-item">
-          <img class="pm-sheet-img" src="assets/proyectos academicos/plaza/01_plaza_paisaje.webp" alt="Plaza - 01_plaza_paisaje">
-        </div>
         <div class="pm-sheet-item">
           <img class="pm-sheet-img" src="assets/proyectos academicos/plaza/02_plaza_01.webp" alt="Plaza - 02_plaza_01">
         </div>
