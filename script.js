@@ -2955,6 +2955,14 @@ function initPortfolio() {
 
     const quoteAuthor = document.getElementById('transition-quote-author');
 
+    if (window.innerWidth <= 768) {
+      quoteText.style.opacity = '1';
+      if (quoteAuthor) quoteAuthor.style.opacity = '0.85';
+      const words = quoteText.querySelectorAll('.quote-word');
+      words.forEach(w => w.style.color = '');
+      return;
+    }
+
     // 1. "hasta que no se vaya el agustin labajian de la pantalla no aparece la frase."
     if (scrollY < homeHeight) {
       quoteText.style.opacity = '0';
@@ -3038,6 +3046,8 @@ function initPortfolio() {
   // =======================================================
   // DETECCIÓN DE LA SECCIÓN ACTIVA EN PANTALLA (TIPO ASCENSOR)
   // =======================================================
+  let lastActiveMenuId = null;
+
   function updateActiveMenuSection() {
     updateMenuVisibility();
 
@@ -3106,8 +3116,14 @@ function initPortfolio() {
       slider.style.opacity = '1';
       slider.style.width = `${activeBtn.offsetWidth}px`;
       slider.style.transform = `translateX(${activeBtn.offsetLeft}px)`;
+
+      if (lastActiveMenuId !== currentActiveId) {
+        lastActiveMenuId = currentActiveId;
+        activeBtn.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+      }
     } else {
       slider.style.opacity = '0';
+      lastActiveMenuId = null;
     }
   }
 
@@ -4072,11 +4088,37 @@ function initHome3DIcosahedrons() {
   window.addEventListener('pointerup', onPointerUp, { passive: true });
   window.addEventListener('pointercancel', onPointerUp, { passive: true });
 
-  window.addEventListener('resize', () => {
-    camera.aspect = window.innerWidth / window.innerHeight;
+  function updateCameraAndCanvas() {
+    const isMobile = window.innerWidth <= 768;
+    const w = canvas.parentElement ? canvas.parentElement.clientWidth : window.innerWidth;
+    const h = isMobile ? 320 : (canvas.parentElement ? canvas.parentElement.clientHeight : window.innerHeight);
+    camera.aspect = w / h;
     camera.updateProjectionMatrix();
-    renderer.setSize(window.innerWidth, window.innerHeight);
-  });
+    renderer.setSize(w, h);
+
+    if (isMobile) {
+      bodies[0].targetAnchor.set(-2.0, 0.5, 0);
+      bodies[1].targetAnchor.set(2.0, -0.4, 0);
+      bodies[0].orbitRadiusX = 0.65;
+      bodies[0].orbitRadiusY = 0.40;
+      bodies[1].orbitRadiusX = 0.58;
+      bodies[1].orbitRadiusY = 0.35;
+      ico1.scale.set(1.05, 1.05, 1.05);
+      ico2.scale.set(1.05, 1.05, 1.05);
+    } else {
+      bodies[0].targetAnchor.set(-4.6, 1.8, 0);
+      bodies[1].targetAnchor.set(4.8, -0.6, 0);
+      bodies[0].orbitRadiusX = 1.15;
+      bodies[0].orbitRadiusY = 0.75;
+      bodies[1].orbitRadiusX = 0.95;
+      bodies[1].orbitRadiusY = 0.65;
+      ico1.scale.set(1, 1, 1);
+      ico2.scale.set(1, 1, 1);
+    }
+  }
+
+  updateCameraAndCanvas();
+  window.addEventListener('resize', updateCameraAndCanvas);
 
   const startTime = performance.now();
 
