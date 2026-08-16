@@ -2306,6 +2306,7 @@ const projectsData = [
     desc_ES: '...La arquitectura no es un mero contenedor neutro de actividades humanas, sino un dispositivo ideológico capaz de legitimar el poder, modelar la memoria colectiva y proyectar narrativas hegemónicas. El espacio monumental y el orden urbano operan como herramientas de persuasión y consolidación de regímenes a lo largo de la historia...',
     desc_EN: '...Architecture is not a neutral container for human activities, but an ideological device capable of legitimizing power, shaping collective memory, and projecting hegemonic narratives. Monumental space and urban order operate as instruments of persuasion and consolidation of regimes throughout history...',
     heroImage: 'assets/escritos/la arquitectura como propaganda politica/00_portada.webp',
+    videoEmbedUrl: 'https://www.youtube.com/embed/RjHkpM-3CrI?start=128',
     sub1Title_ES: 'Investigación & Análisis Audiovisual',
     sub1Title_EN: 'Research & Audiovisual Analysis',
     sub1Desc_ES: 'Ensayo crítico y producción audiovisual estructurada en capítulos temáticos sobre la instrumentalización política de las intervenciones urbanas monumentales, los rituales de masas y el simbolismo arquitectónico de Estado.',
@@ -2323,6 +2324,7 @@ const projectsData = [
     desc_ES: '...Investigación y desarrollo proyectual sobre la coexistencia programática y la mixtura de usos en el tejido urbano contemporáneo, articulando vivienda, trabajo, comercio y espacio colectivo bajo criterios de densidad sostenible e hibridación espacial...',
     desc_EN: '...Research and design development on programmatic coexistence and mixed-use integration in contemporary urban fabric, articulating housing, work, commerce, and collective space under sustainable density criteria...',
     heroImage: 'assets/escritos/mixtura de usos/00_portada.webp',
+    videoEmbedUrl: 'https://www.youtube.com/embed/-RwX5h1fWYA',
     sub1Title_ES: 'Hibridación Tipológica & Ciudad Compacta',
     sub1Title_EN: 'Typological Hybridization & Compact City',
     sub1Desc_ES: 'Estudio de modelos de hibridación programática en parcelas urbanas de escala intermedia, potenciando la vitalidad de la planta baja y la flexibilidad de los usos compartidos.',
@@ -2612,22 +2614,32 @@ function populateProjectModalData(projectId) {
 
   const heroWrapper = document.querySelector('.pm-hero-wrapper');
   if (heroWrapper) {
-    if (project.hideHeroInModal || project.customBody_ES || project.customBody_EN) {
+    if (project.hideHeroInModal) {
       heroWrapper.style.display = 'none';
-    } else {
+      heroWrapper.innerHTML = '';
+    } else if (project.videoEmbedUrl) {
       heroWrapper.style.display = 'block';
-    }
-  }
-
-  if (heroImgEl) heroImgEl.src = project.heroImage;
-
-  if (heroCaptionEl) {
-    if (project.heroCaption_ES || project.heroCaption_EN) {
-      heroCaptionEl.textContent = isES ? project.heroCaption_ES : project.heroCaption_EN;
-      heroCaptionEl.style.display = 'block';
+      heroWrapper.innerHTML = `
+        <div class="pm-hero-video-container">
+          <iframe 
+            src="${project.videoEmbedUrl}" 
+            title="${isES ? project.title_ES : project.title_EN}" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen>
+          </iframe>
+        </div>
+      `;
+    } else if (project.heroImage) {
+      heroWrapper.style.display = 'block';
+      heroWrapper.innerHTML = `
+        <img id="pm-hero-img" class="pm-hero-img" src="${project.heroImage}" alt="${isES ? project.title_ES : project.title_EN}">
+        <figcaption id="pm-hero-caption" class="pm-hero-caption" style="display: ${project.heroCaption_ES || project.heroCaption_EN ? 'block' : 'none'};">
+          ${isES ? (project.heroCaption_ES || '') : (project.heroCaption_EN || '')}
+        </figcaption>
+      `;
     } else {
-      heroCaptionEl.textContent = '';
-      heroCaptionEl.style.display = 'none';
+      heroWrapper.style.display = 'none';
+      heroWrapper.innerHTML = '';
     }
   }
 
@@ -2644,20 +2656,46 @@ function populateProjectModalData(projectId) {
       customBodyContainer.innerHTML = '';
       customBodyContainer.style.display = 'none';
     }
-    const standardBlocks = document.querySelectorAll('.pm-standard-block');
-    standardBlocks.forEach(b => b.style.display = '');
 
-    if (sub1TitleEl) sub1TitleEl.textContent = isES ? project.sub1Title_ES : project.sub1Title_EN;
-    if (sub1DescEl) sub1DescEl.textContent = isES ? project.sub1Desc_ES : project.sub1Desc_EN;
-    if (sub2TitleEl) sub2TitleEl.textContent = isES ? project.sub2Title_ES : project.sub2Title_EN;
-    if (sub2DescEl) sub2DescEl.textContent = isES ? project.sub2Desc_ES : project.sub2Desc_EN;
+    const block1El = document.getElementById('pm-block-1');
+    const block2El = document.getElementById('pm-block-2');
 
-    if (galleryEl && project.gallery) {
-      galleryEl.innerHTML = project.gallery.map(imgUrl => `
-        <div class="pm-gallery-item">
-          <img src="${imgUrl}" alt="Detalle ${project.title_ES}">
-        </div>
-      `).join('');
+    const hasSub1 = (project.sub1Title_ES && project.sub1Title_ES.trim().length > 0) || (project.sub1Desc_ES && project.sub1Desc_ES.trim().length > 0);
+    const hasSub2 = (project.sub2Title_ES && project.sub2Title_ES.trim().length > 0) || (project.sub2Desc_ES && project.sub2Desc_ES.trim().length > 0);
+    const hasGallery = Array.isArray(project.gallery) && project.gallery.length > 0;
+
+    if (block1El) {
+      if (hasSub1) {
+        block1El.style.display = 'block';
+        if (sub1TitleEl) sub1TitleEl.textContent = isES ? project.sub1Title_ES : project.sub1Title_EN;
+        if (sub1DescEl) sub1DescEl.textContent = isES ? project.sub1Desc_ES : project.sub1Desc_EN;
+      } else {
+        block1El.style.display = 'none';
+      }
+    }
+
+    if (galleryEl) {
+      if (hasGallery) {
+        galleryEl.style.display = 'grid';
+        galleryEl.innerHTML = project.gallery.map(imgUrl => `
+          <div class="pm-gallery-item">
+            <img src="${imgUrl}" alt="Detalle ${isES ? project.title_ES : project.title_EN}">
+          </div>
+        `).join('');
+      } else {
+        galleryEl.style.display = 'none';
+        galleryEl.innerHTML = '';
+      }
+    }
+
+    if (block2El) {
+      if (hasSub2) {
+        block2El.style.display = 'block';
+        if (sub2TitleEl) sub2TitleEl.textContent = isES ? project.sub2Title_ES : project.sub2Title_EN;
+        if (sub2DescEl) sub2DescEl.textContent = isES ? project.sub2Desc_ES : project.sub2Desc_EN;
+      } else {
+        block2El.style.display = 'none';
+      }
     }
   }
 
