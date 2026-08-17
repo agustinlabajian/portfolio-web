@@ -1,4 +1,4 @@
-﻿// Estado del idioma, tema y modal
+// Estado del idioma, tema y modal
 let currentLang = 'ES';
 let currentActiveProjectId = null;
 
@@ -122,10 +122,13 @@ const i18n = {
     // PROYECTOS DESTACADOS SECCIÓN 01 Y 02
     profHibaTitle: 'HIBA Academy Bay Area',
     profHibaCat: 'Educativo',
+    profHibaStudio: 'CA architects',
     profIssfTitle: 'International School of San Francisco',
     profIssfCat: 'Educativo',
+    profIssfStudio: 'CA architects',
     profOdeonTitle: 'Teatro Odeón',
     profOdeonCat: 'Cultural',
+    profOdeonStudio: 'AVSA Arquitectura S.R.L.',
 
     acad3Title: 'Centro Cultural Lobos',
     acad3Cat: 'Arquitectura III – Jury',
@@ -262,10 +265,13 @@ const i18n = {
     // PROYECTOS DESTACADOS SECCIÓN 01 Y 02 (EN)
     profHibaTitle: 'HIBA Academy Bay Area',
     profHibaCat: 'Educational',
+    profHibaStudio: 'CA architects',
     profIssfTitle: 'International School of San Francisco',
     profIssfCat: 'Educational',
+    profIssfStudio: 'CA architects',
     profOdeonTitle: 'Odeon Theatre',
     profOdeonCat: 'Cultural',
+    profOdeonStudio: 'AVSA Arquitectura S.R.L.',
 
     acad3Title: 'Lobos Cultural Center',
     acad3Cat: 'Architecture III – Jury',
@@ -880,9 +886,9 @@ const projectsData = [
     title_EN: 'HIBA Academy Bay Area',
     category_ES: 'Educativo',
     category_EN: 'Educational',
-    year: '2025 – act.',
-    year_ES: '2025 – act.',
-    year_EN: '2025 – present',
+    year: '2025-2026',
+    year_ES: '2025-2026',
+    year_EN: '2025-2026',
     role_ES: 'CA architects',
     role_EN: 'CA architects',
     desc_ES: 'Reutilización adaptativa de un antiguo edificio de oficinas corporativas para convertirlo en un campus educativo para estudiantes desde Pre-Kinder hasta 5.º grado, con aproximadamente 59.000 ft² de espacio interior y 10.000 ft² de espacio exterior. El alcance incluyó el desarrollo arquitectónico desde la etapa de DD (Design Development) hasta la fase integral de CD (Construction Documents), junto con una participación activa en las presentaciones de diseño al cliente.',
@@ -1053,9 +1059,9 @@ const projectsData = [
     title_EN: 'International School of San Francisco',
     category_ES: 'Educativo',
     category_EN: 'Educational',
-    year: '2025 – act.',
-    year_ES: '2025 – act.',
-    year_EN: '2025 – present',
+    year: '2025-2026',
+    year_ES: '2025-2026',
+    year_EN: '2025-2026',
     role_ES: 'CA architects',
     role_EN: 'CA architects',
     desc_ES: 'Una intervención integral y desarrollada en etapas que implicó una renovación casi total de la infraestructura existente del campus. El alcance se centró en la elaboración de la documentación detallada para el set de permisos, abarcando una amplia variedad de mejoras arquitectónicas interiores y exteriores, y garantizando un estricto cumplimiento de las normativas vigentes.',
@@ -3666,9 +3672,9 @@ function closePhotoModal() {
 // PANTALLA / MODAL DE TODOS LOS PROYECTOS (16:9 GRID)
 // =======================================================
 const ALL_PROJECTS_LIST = [
-  { id: 'prof-hiba', type: 'prof', title: 'HIBA Academy Bay Area', sub: 'Educativo', img: 'assets/trabajos profesionales/hiba academy bay area/00_portada.webp' },
-  { id: 'prof-issf', type: 'prof', title: 'International School of San Francisco', sub: 'Educativo', img: 'assets/trabajos profesionales/international school of san francisco/00_portada.webp' },
-  { id: 'prof-odeon', type: 'prof', title: 'Teatro Odeón', sub: 'Cultural', img: 'assets/trabajos profesionales/teatro odeon/00_portada.webp' },
+  { id: 'prof-hiba', type: 'prof', title: 'HIBA Academy Bay Area', sub: 'CA architects', img: 'assets/trabajos profesionales/hiba academy bay area/00_portada.webp' },
+  { id: 'prof-issf', type: 'prof', title: 'International School of San Francisco', sub: 'CA architects', img: 'assets/trabajos profesionales/international school of san francisco/00_portada.webp' },
+  { id: 'prof-odeon', type: 'prof', title: 'Teatro Odeón', sub: 'AVSA Arquitectura S.R.L.', img: 'assets/trabajos profesionales/teatro odeon/00_portada.webp' },
   { id: 'acad-1', type: 'acad', title: 'Espesores de Coexistencia', sub: 'Proyecto Urbano', img: 'assets/proyectos academicos/espesores de coexistencia/00_portada.webp' },
   { id: 'acad-2', type: 'acad', title: 'Parque Metropolitano Tecnológico', sub: 'Arquitectura IV', img: 'assets/proyectos academicos/parque metropolitano tecnologico/00_portada.webp' },
   { id: 'acad-3', type: 'acad', title: 'Centro Cultural Lobos', sub: 'Arquitectura III – Jury', img: 'assets/proyectos academicos/centro cultural lobos/00_portada.webp' },
@@ -3697,7 +3703,14 @@ function renderAllProjectsGrid(filter = 'all') {
     const isEsc = p.type === 'esc';
     const projData = projectsData.find(d => d.id === p.id);
     const title = projData ? (isES ? projData.title_ES : projData.title_EN) : p.title;
-    const sub = projData ? (isES ? projData.category_ES : projData.category_EN) : p.sub;
+    let sub = p.sub;
+    if (projData) {
+      if (p.type === 'prof') {
+        sub = isES ? projData.role_ES : projData.role_EN;
+      } else {
+        sub = isES ? projData.category_ES : projData.category_EN;
+      }
+    }
 
     const item = document.createElement('div');
     item.className = 'grid-card-item';
