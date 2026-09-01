@@ -1069,8 +1069,12 @@ body.dark-mode .quote-word {
 .apm-title,
 .apm-title *,
 .apm-count,
-.apm-count * {
-  cursor: default !important;
+.apm-count *,
+.apm-filter-btn,
+.apm-filter-btn *,
+.apm-filter-btn::before,
+.apm-filter-btn::after {
+  cursor: none !important;
 }
 
 .section-title {
@@ -2681,7 +2685,7 @@ body.dark-mode .pm-nav-btn {
   font-family: var(--font-main);
   font-size: 0.85rem;
   font-weight: 600;
-  cursor: default !important;
+  cursor: none !important;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -2866,7 +2870,7 @@ body.dark-mode .apm-count {
   font-family: var(--font-main);
   font-size: 0.84rem;
   font-weight: 600;
-  cursor: default !important;
+  cursor: none !important;
   box-shadow: none !important;
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   overflow: hidden;
