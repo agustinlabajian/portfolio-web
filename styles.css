@@ -1047,12 +1047,29 @@ body.dark-mode .quote-word {
   margin: 0;
 }
 
+.section-header-row,
+.section-header-row *,
+.section-header-row *::before,
+.section-header-row *::after,
 .section-title,
 .section-title *,
+.section-title *::before,
+.section-title *::after,
 .section-count,
+.section-count *::before,
+.section-count *::after,
+.explore-all-btn,
+.explore-all-btn *,
+.explore-all-btn::before,
+.explore-all-btn::after,
+.apm-header,
+.apm-header *,
+.apm-header *::before,
+.apm-header *::after,
 .apm-title,
 .apm-title *,
-.apm-count {
+.apm-count,
+.apm-count * {
   cursor: default !important;
 }
 
@@ -1161,6 +1178,12 @@ body.dark-mode .quote-word {
   }
 }
 
+.photo-mosaic-grid,
+.photo-grid-full {
+  content-visibility: auto;
+  contain-intrinsic-size: 300px 900px;
+}
+
 .photo-card {
   position: relative;
   width: 100%;
@@ -1171,6 +1194,10 @@ body.dark-mode .quote-word {
   border: 1px solid var(--border-color);
   cursor: none !important; /* Sacamos el icono de la mano en fotografías */
   transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease;
+  content-visibility: auto;
+  contain-intrinsic-size: 300px;
+  transform: translateZ(0);
+  will-change: transform;
 }
 
 .photo-card * {
@@ -1178,7 +1205,7 @@ body.dark-mode .quote-word {
 }
 
 .photo-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-4px) translateZ(0);
   box-shadow: 0 16px 36px rgba(0, 0, 0, 0.15);
 }
 
@@ -1188,10 +1215,12 @@ body.dark-mode .quote-word {
   object-fit: cover;
   display: block;
   transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateZ(0);
+  will-change: transform;
 }
 
 .photo-card:hover .photo-img {
-  transform: scale(1.04);
+  transform: scale(1.04) translateZ(0);
 }
 
 .card-img-wrapper {
@@ -2652,7 +2681,7 @@ body.dark-mode .pm-nav-btn {
   font-family: var(--font-main);
   font-size: 0.85rem;
   font-weight: 600;
-  cursor: pointer !important;
+  cursor: default !important;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -2837,7 +2866,7 @@ body.dark-mode .apm-count {
   font-family: var(--font-main);
   font-size: 0.84rem;
   font-weight: 600;
-  cursor: pointer;
+  cursor: default !important;
   box-shadow: none !important;
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   overflow: hidden;

@@ -4280,7 +4280,7 @@ function renderHomePhotosRandomGrid() {
     card.id = `foto-home-${idx + 1}`;
     card.onclick = () => openPhotoModal(p.src);
 
-    card.innerHTML = `<img class="photo-img" src="${p.src}" alt="${p.alt}" loading="lazy">`;
+    card.innerHTML = `<img class="photo-img" src="${p.src}" alt="${p.alt}" loading="lazy" decoding="async">`;
 
     card.addEventListener('mouseenter', () => {
       const cursorDot = document.getElementById('cursor-dot');
@@ -4316,7 +4316,7 @@ function renderAllPhotosGrid() {
     item.id = `all-foto-${idx + 1}`;
     item.onclick = () => openPhotoModal(p.src);
 
-    item.innerHTML = `<img class="photo-img" src="${p.src}" alt="${p.alt}" loading="lazy">`;
+    item.innerHTML = `<img class="photo-img" src="${p.src}" alt="${p.alt}" loading="lazy" decoding="async">`;
 
     item.addEventListener('mouseenter', () => {
       const cursorDot = document.getElementById('cursor-dot');
