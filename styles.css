@@ -1047,6 +1047,15 @@ body.dark-mode .quote-word {
   margin: 0;
 }
 
+.section-title,
+.section-title *,
+.section-count,
+.apm-title,
+.apm-title *,
+.apm-count {
+  cursor: default !important;
+}
+
 .section-title {
   font-family: var(--font-main);
   font-size: clamp(1.8rem, 3.4vw, 2.7rem);
